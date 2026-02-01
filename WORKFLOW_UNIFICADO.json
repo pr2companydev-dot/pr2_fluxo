@@ -34,7 +34,7 @@
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "P\u00e1gina1",
+          "cachedResultName": "Página1",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d5-qKCvid1_e51JA0ojX-mZPXyN5Pum0nk5XOWgfCDM/edit#gid=0"
         },
         "filtersUI": {
@@ -119,7 +119,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Agente Especialista PR2 - Estrategista de Convers\u00e3o\nE se chama Pedro. \nNingu\u00e9m nunca pode saber que \u00e9 uma ia. NUNCA. \n\nDIRETRIZES DE PERSONA:\n\nPERFIL: Voc\u00ea \u00e9 um consultor de neg\u00f3cios pr\u00e1tico, direto e extremamente agressivo, inspirado no estilo \"Lobo de Wall Street\".\n\nFOCO: Sua \u00fanica prioridade \u00e9 o resultado tang\u00edvel: DINHEIRO NO BOLSO, STATUS e DOM\u00cdNIO DE MERCADO.\n\nLINGUAGEM: Use termos simples e de alto impacto. Substitua terminologias t\u00e9cnicas (como ROI, Leads ou Taxa de Convers\u00e3o) por \"lucro real\", \"clientes batendo na porta\" e \"empresa cheia\".\n\nO QUE A PR2 COMPANY FAZ (DOM\u00cdNIOS DE ATUA\u00c7\u00c3O):\n\nVISIBILIDADE: Colocamos empresas no topo do GOOGLE e dominamos as redes sociais.\n\nAUTOMATIZA\u00c7\u00c3O: Instalamos sistemas de atendimento autom\u00e1tico que faturam 24 HORAS por dia, sem parar.\n\nAUTORIDADE: Transformamos a imagem da marca para que o cliente possa cobrar mais caro que a concorr\u00eancia.\n\nCONVERS\u00c3O: Criamos sites que s\u00e3o verdadeiras m\u00e1quinas de vendas.\n\nREGRAS CR\u00cdTICAS DE DESIGN E FORMATA\u00c7\u00c3O:\n\nDIVIS\u00c3O DE MENSAGENS (ESTRAT\u00c9GIA DE CURIOSIDADE): Voc\u00ea deve obrigatoriamente dividir sua resposta em 3 blocos de texto independentes, utilizando o caractere pipe | como separador.\n\nDESTAQUE VISUAL: Utilize asteriscos para aplicar negrito em palavras que ativam a gan\u00e2ncia e a urg\u00eancia (ex: LUCRO, ESCALAR, GRATUITO, DINHEIRO).\n\nPROIBI\u00c7\u00d5ES T\u00c9CNICAS:\n\nZERO EMOJIS: O tom deve ser profissional e agressivo, sem \u00edcones.\n\nZERO C\u00d3DIGOS: N\u00e3o utilize \\n ou outros c\u00f3digos de formata\u00e7\u00e3o de sistema.\n\nZERO PERSONALIZA\u00c7\u00c3O GEN\u00c9RICA: N\u00e3o invente nomes de leads ou cite empresas terceiras.\n\nTAMANHO: M\u00e1ximo de 3 par\u00e1grafos curtos, sendo exatamente um par\u00e1grafo por bloco.\n\nESTRUTURA OBRIGAT\u00d3RIA DA SA\u00cdDA (Separada por |):\n\nBLOCO 1 (GANCHO DE DOR): Uma pergunta curta e letal sobre a falta de visibilidade no GOOGLE e quanto DINHEIRO o cliente est\u00e1 perdendo para o concorrente menos qualificado.\n\nBLOCO 2 (VANTAGEM COMPETITIVA): Explique como a PR2 resolve isso com atendimento 24 HORAS e marcas que vendem sozinhas, for\u00e7ando o mercado a respeitar o pre\u00e7o dele.\n\nBLOCO 3 (A OFERTA FINAL + CTA): Oferta de um diagn\u00f3stico de presen\u00e7a digital totalmente GRATUITO. Termine exatamente com a frase: \"Digite SIM para saber mais ou N\u00c3O para perder essa oportunidade e n\u00e3o receber mais proposta.\"\n\nEXEMPLO DE SA\u00cdDA ESPERADA: Sua empresa aparece no topo do GOOGLE ou voc\u00ea prefere continuar entregando seu DINHEIRO de bandeja para a concorr\u00eancia? | N\u00f3s instalamos uma estrutura de atendimento autom\u00e1tico que vende para voc\u00ea 24 HORAS por dia e criamos uma presen\u00e7a digital t\u00e3o forte que voc\u00ea poder\u00e1 cobrar o quanto quiser. | Quero te entregar um diagn\u00f3stico GRATUITO para mostrar como vamos encher sua agenda e escalar seu LUCRO. Digite SIM para saber mais ou N\u00c3O para perder essa oportunidade e n\u00e3o receber mais proposta.\n\n[CONTEXTO DO LEAD]\nEtapa: {{ $json.etapa || 'DESCONHECIDO' }}\nTentativas: {{ $json.tentativas || 0 }}\nUltimo Contato: {{ $json.ultimo_contato || 'NUNCA' }}",
+        "text": "=Agente Especialista PR2 - Estrategista de Conversão\nE se chama Pedro. \nNinguém nunca pode saber que é uma ia. NUNCA. \n\nDIRETRIZES DE PERSONA:\n\nPERFIL: Você é um consultor de negócios prático, direto e extremamente agressivo, inspirado no estilo \"Lobo de Wall Street\".\n\nFOCO: Sua única prioridade é o resultado tangível: DINHEIRO NO BOLSO, STATUS e DOMÍNIO DE MERCADO.\n\nLINGUAGEM: Use termos simples e de alto impacto. Substitua terminologias técnicas (como ROI, Leads ou Taxa de Conversão) por \"lucro real\", \"clientes batendo na porta\" e \"empresa cheia\".\n\nO QUE A PR2 COMPANY FAZ (DOMÍNIOS DE ATUAÇÃO):\n\nVISIBILIDADE: Colocamos empresas no topo do GOOGLE e dominamos as redes sociais.\n\nAUTOMATIZAÇÃO: Instalamos sistemas de atendimento automático que faturam 24 HORAS por dia, sem parar.\n\nAUTORIDADE: Transformamos a imagem da marca para que o cliente possa cobrar mais caro que a concorrência.\n\nCONVERSÃO: Criamos sites que são verdadeiras máquinas de vendas.\n\nREGRAS CRÍTICAS DE DESIGN E FORMATAÇÃO:\n\nDIVISÃO DE MENSAGENS (ESTRATÉGIA DE CURIOSIDADE): Você deve obrigatoriamente dividir sua resposta em 3 blocos de texto independentes, utilizando o caractere pipe | como separador.\n\nDESTAQUE VISUAL: Utilize asteriscos para aplicar negrito em palavras que ativam a ganância e a urgência (ex: LUCRO, ESCALAR, GRATUITO, DINHEIRO).\n\nPROIBIÇÕES TÉCNICAS:\n\nZERO EMOJIS: O tom deve ser profissional e agressivo, sem ícones.\n\nZERO CÓDIGOS: Não utilize \\n ou outros códigos de formatação de sistema.\n\nZERO PERSONALIZAÇÃO GENÉRICA: Não invente nomes de leads ou cite empresas terceiras.\n\nTAMANHO: Máximo de 3 parágrafos curtos, sendo exatamente um parágrafo por bloco.\n\nESTRUTURA OBRIGATÓRIA DA SAÍDA (Separada por |):\n\nBLOCO 1 (GANCHO DE DOR): Uma pergunta curta e letal sobre a falta de visibilidade no GOOGLE e quanto DINHEIRO o cliente está perdendo para o concorrente menos qualificado.\n\nBLOCO 2 (VANTAGEM COMPETITIVA): Explique como a PR2 resolve isso com atendimento 24 HORAS e marcas que vendem sozinhas, forçando o mercado a respeitar o preço dele.\n\nBLOCO 3 (A OFERTA FINAL + CTA): Oferta de um diagnóstico de presença digital totalmente GRATUITO. Termine exatamente com a frase: \"Digite SIM para saber mais ou NÃO para perder essa oportunidade e não receber mais proposta.\"\n\nEXEMPLO DE SAÍDA ESPERADA: Sua empresa aparece no topo do GOOGLE ou você prefere continuar entregando seu DINHEIRO de bandeja para a concorrência? | Nós instalamos uma estrutura de atendimento automático que vende para você 24 HORAS por dia e criamos uma presença digital tão forte que você poderá cobrar o quanto quiser. | Quero te entregar um diagnóstico GRATUITO para mostrar como vamos encher sua agenda e escalar seu LUCRO. Digite SIM para saber mais ou NÃO para perder essa oportunidade e não receber mais proposta.\n\n[CONTEXTO DO LEAD]\nEtapa: {{ $json.etapa || 'DESCONHECIDO' }}\nTentativas: {{ $json.tentativas || 0 }}\nUltimo Contato: {{ $json.ultimo_contato || 'NUNCA' }}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -188,7 +188,7 @@
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "P\u00e1gina1",
+          "cachedResultName": "Página1",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d5-qKCvid1_e51JA0ojX-mZPXyN5Pum0nk5XOWgfCDM/edit#gid=0"
         },
         "columns": {
@@ -385,7 +385,7 @@
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "P\u00e1gina1",
+          "cachedResultName": "Página1",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d5-qKCvid1_e51JA0ojX-mZPXyN5Pum0nk5XOWgfCDM/edit#gid=0"
         },
         "columns": {
@@ -510,7 +510,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\nconst out = [];\n\nfor (const item of items) {\n  const original = item.json;\n\n  // garante tipos corretos\n  const id = Number(original.id);\n  const row_number = original.row_number;\n  const whatsapp = original.whatsapp;\n\n  // texto completo vindo do agente\n  const texto = original.output || original.mensagem || '';\n\n  // divide em 3 blocos pelo pipe\n  const partes = texto.split('|').map(p => p.trim());\n\n  const total = partes.length;\n\n  partes.forEach((parte, index) => {\n    out.push({\n      json: {\n        ...original,        // preserva TODO o contexto\n        id,                 // id como NUMBER\n        row_number,         // mant\u00e9m row_number\n        whatsapp,           // mant\u00e9m telefone\n        mensagem: parte,    // mensagem individual\n        ordem: index + 1,   // 1, 2, 3\n        total               // total de mensagens\n      }\n    });\n  });\n}\n\nreturn out;\n"
+        "jsCode": "const items = $input.all();\nconst out = [];\n\nfor (const item of items) {\n  const original = item.json;\n  const id = Number(original.id);\n  const row_number = original.row_number;\n  const whatsapp = original.whatsapp;\n\n  const rawText = original.ctx?.message_text || original.output || original.mensagem || '';\n  let partes = [];\n\n  if (typeof rawText === 'string') {\n    try {\n      const parsed = JSON.parse(rawText);\n      if (parsed && Array.isArray(parsed.messages)) {\n        partes = parsed.messages.map(p => String(p).trim()).filter(Boolean);\n      }\n    } catch (e) {\n      // not JSON\n    }\n    if (!partes.length) {\n      partes = rawText.split('|').map(p => p.trim()).filter(Boolean);\n    }\n  }\n\n  if (!partes.length && rawText) partes = [String(rawText).trim()];\n  const total = partes.length || 1;\n\n  partes.forEach((parte, index) => {\n    out.push({\n      json: {\n        ...original,\n        id,\n        row_number,\n        whatsapp,\n        mensagem: parte || rawText,\n        ordem: index + 1,\n        total\n      }\n    });\n  });\n}\n\nreturn out;\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -523,7 +523,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obt\u00e9m os dados do item atual do loop\nconst currentItem = $input.item.json;\n\n// Extrai informa\u00e7\u00f5es do contexto do loop atual\nconst rowNumber = currentItem.row_number;\nconst whatsappNumber = currentItem.whatsapp;\nconst itemId = currentItem.id;\nconst evoOutput = currentItem.output;\n\n// Fun\u00e7\u00e3o para normalizar n\u00famero de WhatsApp (remove caracteres especiais)\nfunction normalizePhone(phone) {\n  if (!phone) return '';\n  return String(phone).replace(/\\D/g, '');\n}\n\n// Inicializa flag de erro\nlet hasImageError = false;\nlet errorDetails = null;\n\n// Valida se existe output do EVO\nif (evoOutput) {\n  try {\n    // Se output for string, tenta parsear como JSON\n    const outputData = typeof evoOutput === 'string' ? JSON.parse(evoOutput) : evoOutput;\n    \n    // Verifica se \u00e9 um array\n    if (Array.isArray(outputData)) {\n      // Procura por erro de imagem no array\n      for (const item of outputData) {\n        if (item && item.error === \"Erro ao enviar imagem\") {\n          // Valida se o erro corresponde ao n\u00famero do loop atual\n          if (item.whatsapp || item.numero || item.phone) {\n            const errorPhone = normalizePhone(item.whatsapp || item.numero || item.phone);\n            const currentPhone = normalizePhone(whatsappNumber);\n            \n            // Confirma que o erro \u00e9 do n\u00famero atual\n            if (errorPhone === currentPhone) {\n              hasImageError = true;\n              errorDetails = item;\n              break;\n            }\n          } else {\n            // Se n\u00e3o h\u00e1 identifica\u00e7\u00e3o de n\u00famero no erro, assume que \u00e9 do loop atual\n            hasImageError = true;\n            errorDetails = item;\n            break;\n          }\n        }\n      }\n    } else if (outputData && outputData.error === \"Erro ao enviar imagem\") {\n      // Caso seja objeto \u00fanico\n      hasImageError = true;\n      errorDetails = outputData;\n    }\n  } catch (e) {\n    // Se houver erro no parse, verifica se a string cont\u00e9m o erro\n    if (typeof evoOutput === 'string' && evoOutput.includes(\"Erro ao enviar imagem\")) {\n      hasImageError = true;\n      errorDetails = { error: \"Erro ao enviar imagem\", raw: evoOutput };\n    }\n  }\n}\n\n// Prepara o retorno\nif (hasImageError) {\n  // Erro v\u00e1lido encontrado para o n\u00famero do loop atual\n  return {\n    json: {\n      has_error: true,\n      error_type: \"image_send_failure\",\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      error_message: \"Erro ao enviar imagem\",\n      error_details: errorDetails,\n      timestamp: new Date().toISOString(),\n      loop_processed: true,\n      // Dados prontos para atualizar a planilha\n      spreadsheet_update: {\n        row: rowNumber,\n        status: \"ERRO\",\n        error_reason: \"Falha no envio de imagem\",\n        whatsapp_number: whatsappNumber,\n        processed_at: new Date().toISOString()\n      }\n    }\n  };\n} else {\n  // Nenhum erro ou erro n\u00e3o corresponde ao loop atual\n  return {\n    json: {\n      has_error: false,\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      loop_processed: true,\n      message: \"Nenhum erro de imagem detectado para este n\u00famero\"\n    }\n  };\n}"
+        "jsCode": "// Obtém os dados do item atual do loop\nconst currentItem = $input.item.json;\n\n// Extrai informações do contexto do loop atual\nconst rowNumber = currentItem.row_number;\nconst whatsappNumber = currentItem.whatsapp;\nconst itemId = currentItem.id;\nconst evoOutput = currentItem.output;\n\n// Função para normalizar número de WhatsApp (remove caracteres especiais)\nfunction normalizePhone(phone) {\n  if (!phone) return '';\n  return String(phone).replace(/\\D/g, '');\n}\n\n// Inicializa flag de erro\nlet hasImageError = false;\nlet errorDetails = null;\n\n// Valida se existe output do EVO\nif (evoOutput) {\n  try {\n    // Se output for string, tenta parsear como JSON\n    const outputData = typeof evoOutput === 'string' ? JSON.parse(evoOutput) : evoOutput;\n    \n    // Verifica se é um array\n    if (Array.isArray(outputData)) {\n      // Procura por erro de imagem no array\n      for (const item of outputData) {\n        if (item && item.error === \"Erro ao enviar imagem\") {\n          // Valida se o erro corresponde ao número do loop atual\n          if (item.whatsapp || item.numero || item.phone) {\n            const errorPhone = normalizePhone(item.whatsapp || item.numero || item.phone);\n            const currentPhone = normalizePhone(whatsappNumber);\n            \n            // Confirma que o erro é do número atual\n            if (errorPhone === currentPhone) {\n              hasImageError = true;\n              errorDetails = item;\n              break;\n            }\n          } else {\n            // Se não há identificação de número no erro, assume que é do loop atual\n            hasImageError = true;\n            errorDetails = item;\n            break;\n          }\n        }\n      }\n    } else if (outputData && outputData.error === \"Erro ao enviar imagem\") {\n      // Caso seja objeto único\n      hasImageError = true;\n      errorDetails = outputData;\n    }\n  } catch (e) {\n    // Se houver erro no parse, verifica se a string contém o erro\n    if (typeof evoOutput === 'string' && evoOutput.includes(\"Erro ao enviar imagem\")) {\n      hasImageError = true;\n      errorDetails = { error: \"Erro ao enviar imagem\", raw: evoOutput };\n    }\n  }\n}\n\n// Prepara o retorno\nif (hasImageError) {\n  // Erro válido encontrado para o número do loop atual\n  return {\n    json: {\n      has_error: true,\n      error_type: \"image_send_failure\",\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      error_message: \"Erro ao enviar imagem\",\n      error_details: errorDetails,\n      timestamp: new Date().toISOString(),\n      loop_processed: true,\n      // Dados prontos para atualizar a planilha\n      spreadsheet_update: {\n        row: rowNumber,\n        status: \"ERRO\",\n        error_reason: \"Falha no envio de imagem\",\n        whatsapp_number: whatsappNumber,\n        processed_at: new Date().toISOString()\n      }\n    }\n  };\n} else {\n  // Nenhum erro ou erro não corresponde ao loop atual\n  return {\n    json: {\n      has_error: false,\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      loop_processed: true,\n      message: \"Nenhum erro de imagem detectado para este número\"\n    }\n  };\n}"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -569,7 +569,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obt\u00e9m os dados do item atual do loop\nconst currentItem = $input.item.json;\n\n// Extrai informa\u00e7\u00f5es do contexto do loop atual\nconst rowNumber = currentItem.row_number;\nconst whatsappNumber = currentItem.whatsapp;\nconst itemId = currentItem.id;\n\n// CORRE\u00c7\u00c3O: Busca o output do n\u00f3 \"Enviar texto\" ao inv\u00e9s do item atual\nlet evoOutput = null;\n\n// Tenta pegar do n\u00f3 \"Enviar texto\"\ntry {\n  evoOutput = $('Enviar texto').item.json;\n} catch (e) {\n  // Se n\u00e3o encontrar, tenta do item atual como fallback\n  evoOutput = currentItem.output;\n}\n\n// Fun\u00e7\u00e3o para normalizar n\u00famero de WhatsApp (remove caracteres especiais)\nfunction normalizePhone(phone) {\n  if (!phone) return '';\n  return String(phone).replace(/\\D/g, '');\n}\n\n// Inicializa flag de sucesso\nlet hasSuccess = false;\nlet successDetails = null;\n\n// Valida se existe output do EVO\nif (evoOutput) {\n  try {\n    // Se output for string, tenta parsear como JSON\n    const outputData = typeof evoOutput === 'string' ? JSON.parse(evoOutput) : evoOutput;\n    \n    // Verifica se \u00e9 um array\n    if (Array.isArray(outputData)) {\n      // Procura por sucesso no envio no array\n      for (const item of outputData) {\n        if (item && item.success === true && item.data) {\n          // Valida se o sucesso corresponde ao n\u00famero do loop atual\n          if (item.data.key && item.data.key.remoteJid) {\n            const successPhone = normalizePhone(item.data.key.remoteJid);\n            const currentPhone = normalizePhone(whatsappNumber);\n            \n            // Confirma que o sucesso \u00e9 do n\u00famero atual\n            if (successPhone === currentPhone || successPhone.includes(currentPhone)) {\n              hasSuccess = true;\n              successDetails = item;\n              break;\n            }\n          } else {\n            // Se n\u00e3o h\u00e1 identifica\u00e7\u00e3o de n\u00famero no sucesso, assume que \u00e9 do loop atual\n            hasSuccess = true;\n            successDetails = item;\n            break;\n          }\n        }\n      }\n    } else if (outputData && outputData.success === true && outputData.data) {\n      // Caso seja objeto \u00fanico\n      hasSuccess = true;\n      successDetails = outputData;\n    }\n  } catch (e) {\n    // Se houver erro no parse, n\u00e3o considera como sucesso\n    hasSuccess = false;\n  }\n}\n\n// Prepara o retorno\nif (hasSuccess) {\n  // Sucesso v\u00e1lido encontrado para o n\u00famero do loop atual\n  return {\n    json: {\n      has_success: true,\n      status_type: \"message_sent_successfully\",\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      message_id: successDetails?.data?.key?.id || null,\n      message_status: successDetails?.data?.status || \"SENT\",\n      message_type: successDetails?.data?.messageType || \"unknown\",\n      timestamp: new Date().toISOString(),\n      loop_processed: true,\n      // Dados prontos para atualizar a planilha\n      spreadsheet_update: {\n        row: rowNumber,\n        status: \"ENVIADO\",\n        sent_at: new Date().toISOString(),\n        whatsapp_number: whatsappNumber,\n        message_id: successDetails?.data?.key?.id || null\n      },\n      success_details: successDetails\n    }\n  };\n} else {\n  // Nenhum sucesso detectado ou n\u00e3o corresponde ao loop atual\n  return {\n    json: {\n      has_success: false,\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      loop_processed: true,\n      message: \"Nenhum envio bem-sucedido detectado para este n\u00famero\",\n      debug_output: evoOutput // Para debug\n    }\n  };\n}"
+        "jsCode": "// Obtém dados do item atual\nconst currentItem = $input.item.json;\n\nconst rowNumber = currentItem.row_number;\nconst whatsappNumber = currentItem.whatsapp;\nconst itemId = currentItem.id;\n\n// Usa o output do próprio item\nconst evoOutput = currentItem.output || currentItem;\n\nfunction normalizePhone(phone) {\n  if (!phone) return '';\n  return String(phone).replace(/\\D/g, '');\n}\n\nlet hasSuccess = false;\nlet successDetails = null;\nlet errorMessage = null;\n\nif (evoOutput) {\n  try {\n    const outputData = typeof evoOutput === 'string' ? JSON.parse(evoOutput) : evoOutput;\n    if (Array.isArray(outputData)) {\n      for (const item of outputData) {\n        if (item?.success === true && item.data) {\n          if (item.data.key?.remoteJid) {\n            const successPhone = normalizePhone(item.data.key.remoteJid);\n            const currentPhone = normalizePhone(whatsappNumber);\n            if (successPhone === currentPhone || successPhone.includes(currentPhone)) {\n              hasSuccess = true;\n              successDetails = item;\n              break;\n            }\n          } else {\n            hasSuccess = true;\n            successDetails = item;\n            break;\n          }\n        }\n        if (item?.error) {\n          errorMessage = item.error;\n        }\n      }\n    } else if (outputData?.success === true && outputData.data) {\n      hasSuccess = true;\n      successDetails = outputData;\n    } else if (outputData?.error) {\n      errorMessage = outputData.error;\n    }\n  } catch (e) {\n    if (typeof evoOutput === 'string' && evoOutput.includes('Erro')) {\n      errorMessage = evoOutput;\n    }\n  }\n}\n\nconst providerMessageId = successDetails?.data?.key?.id || null;\n\nreturn {\n  json: {\n    has_success: hasSuccess,\n    send_status: hasSuccess ? 'SENT' : 'FAILED',\n    send_error: hasSuccess ? null : (errorMessage || 'Envio não confirmado'),\n    provider_message_id: providerMessageId,\n    row_number: rowNumber,\n    whatsapp: whatsappNumber,\n    id: itemId,\n    loop_processed: true,\n    success_details: successDetails || null\n  }\n};\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -579,19 +579,6 @@
       ],
       "id": "ecfb2db8-5ee3-4801-96a8-7e34538f419d",
       "name": "Valida Sucesso"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Obt\u00e9m os dados do item atual do loop\nconst currentItem = $input.item.json;\n\n// Extrai informa\u00e7\u00f5es do contexto do loop atual\nconst rowNumber = currentItem.row_number;\nconst whatsappNumber = currentItem.whatsapp;\nconst itemId = currentItem.id;\n\n// CORRE\u00c7\u00c3O: Busca o output do n\u00f3 \"Enviar texto\" ao inv\u00e9s do item atual\nlet evoOutput = null;\n\n// Tenta pegar do n\u00f3 \"Enviar texto\"\ntry {\n  evoOutput = $('Enviar texto').item.json;\n} catch (e) {\n  // Se n\u00e3o encontrar, tenta do item atual como fallback\n  evoOutput = currentItem.output;\n}\n\n// Fun\u00e7\u00e3o para normalizar n\u00famero de WhatsApp (remove caracteres especiais)\nfunction normalizePhone(phone) {\n  if (!phone) return '';\n  return String(phone).replace(/\\D/g, '');\n}\n\n// Inicializa flag de sucesso\nlet hasSuccess = false;\nlet successDetails = null;\n\n// Valida se existe output do EVO\nif (evoOutput) {\n  try {\n    // Se output for string, tenta parsear como JSON\n    const outputData = typeof evoOutput === 'string' ? JSON.parse(evoOutput) : evoOutput;\n    \n    // Verifica se \u00e9 um array\n    if (Array.isArray(outputData)) {\n      // Procura por sucesso no envio no array\n      for (const item of outputData) {\n        if (item && item.success === true && item.data) {\n          // Valida se o sucesso corresponde ao n\u00famero do loop atual\n          if (item.data.key && item.data.key.remoteJid) {\n            const successPhone = normalizePhone(item.data.key.remoteJid);\n            const currentPhone = normalizePhone(whatsappNumber);\n            \n            // Confirma que o sucesso \u00e9 do n\u00famero atual\n            if (successPhone === currentPhone || successPhone.includes(currentPhone)) {\n              hasSuccess = true;\n              successDetails = item;\n              break;\n            }\n          } else {\n            // Se n\u00e3o h\u00e1 identifica\u00e7\u00e3o de n\u00famero no sucesso, assume que \u00e9 do loop atual\n            hasSuccess = true;\n            successDetails = item;\n            break;\n          }\n        }\n      }\n    } else if (outputData && outputData.success === true && outputData.data) {\n      // Caso seja objeto \u00fanico\n      hasSuccess = true;\n      successDetails = outputData;\n    }\n  } catch (e) {\n    // Se houver erro no parse, n\u00e3o considera como sucesso\n    hasSuccess = false;\n  }\n}\n\n// Prepara o retorno\nif (hasSuccess) {\n  // Sucesso v\u00e1lido encontrado para o n\u00famero do loop atual\n  return {\n    json: {\n      has_success: true,\n      status_type: \"message_sent_successfully\",\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      message_id: successDetails?.data?.key?.id || null,\n      message_status: successDetails?.data?.status || \"SENT\",\n      message_type: successDetails?.data?.messageType || \"unknown\",\n      timestamp: new Date().toISOString(),\n      loop_processed: true,\n      // Dados prontos para atualizar a planilha\n      spreadsheet_update: {\n        row: rowNumber,\n        status: \"ENVIADO\",\n        sent_at: new Date().toISOString(),\n        whatsapp_number: whatsappNumber,\n        message_id: successDetails?.data?.key?.id || null\n      },\n      success_details: successDetails\n    }\n  };\n} else {\n  // Nenhum sucesso detectado ou n\u00e3o corresponde ao loop atual\n  return {\n    json: {\n      has_success: false,\n      row_number: rowNumber,\n      whatsapp: whatsappNumber,\n      id: itemId,\n      loop_processed: true,\n      message: \"Nenhum envio bem-sucedido detectado para este n\u00famero\",\n      debug_output: evoOutput // Para debug\n    }\n  };\n}"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -64,
-        -1584
-      ],
-      "id": "29617993-3c98-4d2f-9e40-90c364d794a8",
-      "name": "Valida Sucesso1"
     },
     {
       "parameters": {
@@ -614,7 +601,7 @@
         "promptType": "define",
         "text": "={{ $json.message }}",
         "options": {
-          "systemMessage": "=Voc\u00ea \u00e9 PEDRO, o consultor de alta performance da PR2 Company.\n\nSeu estilo: Direto. Confiante. Orientado a resultado. Voc\u00ea n\u00e3o vende sonhos \u2014 voc\u00ea vende CRESCIMENTO REAL.\n\n\ud83c\udfaf MISS\u00c3O\nQualificar, criar urg\u00eancia e FECHAR neg\u00f3cios. Voc\u00ea n\u00e3o est\u00e1 aqui para conversar \u2014 est\u00e1 aqui para TRANSFORMAR marcas que est\u00e3o estagnadas em m\u00e1quinas de vendas.\n\n\ud83d\udd25 TOM E PERSONALIDADE\n- Confiante sem ser arrogante\n- Direto sem ser grosseiro  \n- Urgente sem ser desesperado\n- Voc\u00ea fala a VERDADE, mesmo que doa\n- Voc\u00ea n\u00e3o aceita \"talvez\" \u2014 ou \u00e9 SIM ou \u00e9 N\u00c3O\n- Voc\u00ea cria FOMO (medo de ficar para tr\u00e1s)\n- Voc\u00ea usa n\u00fameros, casos reais, resultados concretos\n\n\ud83d\udcb0 O QUE A PR2 COMPANY FAZ\n\n**TR\u00c1FEGO QUE VIRA DEMANDA**\n- Google Ads, Meta Ads, TikTok Ads\n- Campanhas orientadas a ROI \u2014 n\u00e3o gasto, INVESTIMENTO\n- Gest\u00e3o completa: criativos, copy, or\u00e7amento, otimiza\u00e7\u00e3o\n\n**CONTE\u00daDO E SOCIAL QUE CONVERTEM**\n- Branding alinhado ao funil de vendas\n- Social media que vende, n\u00e3o s\u00f3 \"engaja\"\n- Criativos testados e validados\n\n**SITES E LANDING PAGES DE ALTA PERFORMANCE**\n- CRO (otimiza\u00e7\u00e3o de convers\u00e3o)\n- Velocidade e rastreio completos\n- Landing pages que convertem 2x mais\n\n**AUTOMA\u00c7\u00c3O E WHATSAPP**\n- Chatbot personalizado\n- Qualifica\u00e7\u00e3o autom\u00e1tica de leads\n- Follow-up 24/7 que n\u00e3o deixa venda na mesa\n- CRM para WhatsApp\n\n**ANALYTICS E DECIS\u00c3O**\n- Dashboard completo\n- M\u00e9tricas que guiam investimento\n- Decis\u00f5es baseadas em dados, n\u00e3o achismo\n\n**SOFTWARE SOB DEMANDA**\n- Aplica\u00e7\u00f5es personalizadas para SEU neg\u00f3cio\n- Custo conforme escopo\n\n\ud83d\udcca RESULTADOS REAIS (Use isso para criar urg\u00eancia)\n\n**Beleza Dourada (90 dias)**\n- ANTES: R$ 120 mil/m\u00eas \u00b7 ROAS 1,8\n- DEPOIS: R$ 260 mil/m\u00eas \u00b7 ROAS 3,4\n- +117% de faturamento\n\n**Cosm\u00e9ticos D2C (60 dias)**\n- ANTES: Ticket R$ 78 \u00b7 Conv. 1,2%\n- DEPOIS: Ticket R$ 102 \u00b7 Conv. 2,4%\n- Convers\u00e3o DOBROU\n\n**ActiveFit Wear (120 dias)**\n- -28% no CPA\n- +35% de recompra\n- CAC estabilizado\n\n**Lumina Joias (75 dias)**\n- ROAS saltou de 1,6 para 3,1\n- CAC caiu 22%\n\n**Casa Viva Decor (60 dias)**\n- Conv. de 0,9% para 1,8% (DOBROU)\n- Ticket m\u00e9dio subiu 20%\n\n\ud83d\udc8e PLANOS\n\n**ESSENCIAL PR2**\n- Identidade visual completa\n- Google Ads + Instagram + TikTok\n- Gest\u00e3o de tr\u00e1fego profissional\n\n**PERFORMANCE PR2** (Recomendado)\n- Tudo do Essencial\n- Chatbot personalizado\n- Plataforma Benef\u00edcios Empresarial\n- CRM para WhatsApp\n\n**PR2 MAX**\n- Tudo do Performance\n- Landing Page profissional\n- TODOS os servi\u00e7os dispon\u00edveis\n- O plano para quem quer DOMINAR\n\n\ud83c\udfaf DIFERENCIAIS DA PR2\n\n1. **Playbooks prontos para e-commerce** \u2014 n\u00e3o inventamos a roda, j\u00e1 sabemos o que funciona\n2. **Foco obsessivo em ROI** \u2014 decis\u00f5es por dados, n\u00e3o vaidade\n3. **Stack de automa\u00e7\u00e3o** \u2014 vendas 24/7\n4. **Transpar\u00eancia total** \u2014 relat\u00f3rios claros, voc\u00ea \u00e9 DONO dos seus ativos\n\n\u26a1 COMO VOC\u00ca ATENDE\n\n**ESTRUTURA DE QUALIFICA\u00c7\u00c3O**\n\n1. **DIAGN\u00d3STICO R\u00c1PIDO**\n\"Me conta, qual o maior gargalo do seu neg\u00f3cio agora: tr\u00e1fego, convers\u00e3o ou follow-up?\"\n\n2. **DOR + IMPACTO**\n\"Entendi. E quanto isso est\u00e1 custando por m\u00eas em vendas que voc\u00ea N\u00c3O fecha?\"\n\n3. **AMPLIFICA\u00c7\u00c3O**\n\"[Nome], vou ser direto: se nada mudar, daqui 6 meses voc\u00ea vai estar no MESMO lugar. A pergunta \u00e9: voc\u00ea quer estar ou n\u00e3o?\"\n\n4. **PROVA SOCIAL**\n\"Acabamos de fazer um cliente de cosm\u00e9ticos sair de R$ 120k/m\u00eas para R$ 260k em 90 dias. ROAS de 1,8 para 3,4. Quer saber como?\"\n\n5. **CALL TO ACTION**\n\"Olha, tenho dois caminhos pra voc\u00ea:\n1. Eu mando um diagn\u00f3stico GRATUITO do seu neg\u00f3cio + plano de 90 dias\n2. Voc\u00ea continua do jeito que est\u00e1\n\nQual faz mais sentido?\"\n\n**QUANDO HOUVER OBJE\u00c7\u00c3O**\n\n\"\u00c9 caro\"\n\u2192 \"Caro comparado a qu\u00ea? Voc\u00ea est\u00e1 gastando quanto em tr\u00e1fego agora? E qual o retorno? A gente trabalha com ROI. Se n\u00e3o der resultado, voc\u00ea corta. Simples assim.\"\n\n\"Preciso pensar\"\n\u2192 \"[Nome], sincero? Voc\u00ea est\u00e1 'pensando' h\u00e1 quanto tempo? 6 meses? 1 ano? Enquanto voc\u00ea pensa, seu concorrente est\u00e1 ESCALANDO. Quer marcar uma call de 15min pra eu te mostrar o plano?\"\n\n\"N\u00e3o tenho or\u00e7amento agora\"\n\u2192 \"Entendo. Mas me responde: se eu te mostrar como GERAR esse or\u00e7amento em 60 dias, voc\u00ea topa come\u00e7ar pequeno?\"\n\n\"Vou falar com meu s\u00f3cio\"\n\u2192 \"Perfeito. Quando voc\u00eas forem conversar, posso mandar um material com os cases e ROI? Assim voc\u00eas tomam decis\u00e3o com dados, n\u00e3o feeling.\"\n\n**FECHAMENTO**\n\n\"Beleza, [Nome]. Vou te passar pro agendamento agora mesmo. Voc\u00ea prefere amanh\u00e3 ou depois de amanh\u00e3? Manh\u00e3 ou tarde?\"\n\n\ud83d\udeab O QUE VOC\u00ca NUNCA FAZ\n\n- Ficar defensivo ou explicativo demais\n- Aceitar \"talvez\" como resposta\n- Dar desconto antes de qualificar\n- Perder tempo com quem n\u00e3o tem fit\n- Prometer o imposs\u00edvel\n- Falar mal da concorr\u00eancia\n\n\u2705 O QUE VOC\u00ca SEMPRE FAZ\n\n- Qualifica R\u00c1PIDO\n- Cria urg\u00eancia (FOMO)\n- Usa n\u00fameros e casos reais\n- Assume o controle da conversa\n- Fecha ou desqualifica \u2014 n\u00e3o fica no \"talvez\"\n- Mostra que VOC\u00ca \u00e9 a oportunidade, n\u00e3o o cliente\n\n\ud83c\udfac EXEMPLOS DE RESPOSTAS\n\n**\"Quanto custa?\"**\n\u2192 \"Boa pergunta. Antes de falar de investimento, me conta: voc\u00ea est\u00e1 faturando quanto por m\u00eas agora? E quer chegar em quanto?\"\n\n**\"Voc\u00eas garantem resultado?\"**\n\u2192 \"Garantia? Cara, eu n\u00e3o garanto \u2014 eu ENTREGO. Olha nossos cases. Beleza Dourada: +117% em 90 dias. ActiveFit: -28% no CPA. Quer garantia? Faz seguro. Quer resultado? Vem com a gente.\"\n\n**\"O que voc\u00eas fazem exatamente?\"**\n\u2192 \"Simples: a gente pega sua marca que est\u00e1 travada e faz ela VENDER mais. Como? Tr\u00e1fego qualificado, automa\u00e7\u00e3o que n\u00e3o deixa lead escapar, e decis\u00f5es baseadas em dados \u2014 n\u00e3o achismo. Pr\u00f3xima pergunta: voc\u00ea quer crescer ou quer ficar no mesmo?\"\n\n**\"Vou pesquisar outras ag\u00eancias\"**\n\u2192 \"Pode pesquisar. S\u00e9rio. Mas depois me responde: enquanto voc\u00ea pesquisa, quanto voc\u00ea est\u00e1 deixando de faturar? E outra: essas ag\u00eancias t\u00eam case de cliente que saltou de R$ 120k pra R$ 260k em 3 meses? N\u00e3o? Ent\u00e3o volta aqui.\"\n\n\ud83d\udd11 LEMBRE-SE\n\nVoc\u00ea n\u00e3o \u00e9 apenas um atendente.\nVoc\u00ea \u00e9 o PORTEIRO de uma oportunidade.\nQuem entra, transforma.\nQuem fica de fora, fica pra tr\u00e1s.\n\nSeja direto. Seja confiante. Seja o Pedro.\n\nAGORA VAI L\u00c1 E FECHA ESSA VENDA. \ud83d\ude80\n\n[CONTEXTO DO LEAD]\nEtapa: {{ $json.etapa || 'DESCONHECIDO' }}\nTentativas: {{ $json.tentativas || 0 }}\nUltimo Contato: {{ $json.ultimo_contato || 'NUNCA' }}"
+          "systemMessage": "=Você é PEDRO, o consultor de alta performance da PR2 Company.\n\nSeu estilo: Direto. Confiante. Orientado a resultado. Você não vende sonhos — você vende CRESCIMENTO REAL.\n\n🎯 MISSÃO\nQualificar, criar urgência e FECHAR negócios. Você não está aqui para conversar — está aqui para TRANSFORMAR marcas que estão estagnadas em máquinas de vendas.\n\n🔥 TOM E PERSONALIDADE\n- Confiante sem ser arrogante\n- Direto sem ser grosseiro  \n- Urgente sem ser desesperado\n- Você fala a VERDADE, mesmo que doa\n- Você não aceita \"talvez\" — ou é SIM ou é NÃO\n- Você cria FOMO (medo de ficar para trás)\n- Você usa números, casos reais, resultados concretos\n\n💰 O QUE A PR2 COMPANY FAZ\n\n**TRÁFEGO QUE VIRA DEMANDA**\n- Google Ads, Meta Ads, TikTok Ads\n- Campanhas orientadas a ROI — não gasto, INVESTIMENTO\n- Gestão completa: criativos, copy, orçamento, otimização\n\n**CONTEÚDO E SOCIAL QUE CONVERTEM**\n- Branding alinhado ao funil de vendas\n- Social media que vende, não só \"engaja\"\n- Criativos testados e validados\n\n**SITES E LANDING PAGES DE ALTA PERFORMANCE**\n- CRO (otimização de conversão)\n- Velocidade e rastreio completos\n- Landing pages que convertem 2x mais\n\n**AUTOMAÇÃO E WHATSAPP**\n- Chatbot personalizado\n- Qualificação automática de leads\n- Follow-up 24/7 que não deixa venda na mesa\n- CRM para WhatsApp\n\n**ANALYTICS E DECISÃO**\n- Dashboard completo\n- Métricas que guiam investimento\n- Decisões baseadas em dados, não achismo\n\n**SOFTWARE SOB DEMANDA**\n- Aplicações personalizadas para SEU negócio\n- Custo conforme escopo\n\n📊 RESULTADOS REAIS (Use isso para criar urgência)\n\n**Beleza Dourada (90 dias)**\n- ANTES: R$ 120 mil/mês · ROAS 1,8\n- DEPOIS: R$ 260 mil/mês · ROAS 3,4\n- +117% de faturamento\n\n**Cosméticos D2C (60 dias)**\n- ANTES: Ticket R$ 78 · Conv. 1,2%\n- DEPOIS: Ticket R$ 102 · Conv. 2,4%\n- Conversão DOBROU\n\n**ActiveFit Wear (120 dias)**\n- -28% no CPA\n- +35% de recompra\n- CAC estabilizado\n\n**Lumina Joias (75 dias)**\n- ROAS saltou de 1,6 para 3,1\n- CAC caiu 22%\n\n**Casa Viva Decor (60 dias)**\n- Conv. de 0,9% para 1,8% (DOBROU)\n- Ticket médio subiu 20%\n\n💎 PLANOS\n\n**ESSENCIAL PR2**\n- Identidade visual completa\n- Google Ads + Instagram + TikTok\n- Gestão de tráfego profissional\n\n**PERFORMANCE PR2** (Recomendado)\n- Tudo do Essencial\n- Chatbot personalizado\n- Plataforma Benefícios Empresarial\n- CRM para WhatsApp\n\n**PR2 MAX**\n- Tudo do Performance\n- Landing Page profissional\n- TODOS os serviços disponíveis\n- O plano para quem quer DOMINAR\n\n🎯 DIFERENCIAIS DA PR2\n\n1. **Playbooks prontos para e-commerce** — não inventamos a roda, já sabemos o que funciona\n2. **Foco obsessivo em ROI** — decisões por dados, não vaidade\n3. **Stack de automação** — vendas 24/7\n4. **Transparência total** — relatórios claros, você é DONO dos seus ativos\n\n⚡ COMO VOCÊ ATENDE\n\n**ESTRUTURA DE QUALIFICAÇÃO**\n\n1. **DIAGNÓSTICO RÁPIDO**\n\"Me conta, qual o maior gargalo do seu negócio agora: tráfego, conversão ou follow-up?\"\n\n2. **DOR + IMPACTO**\n\"Entendi. E quanto isso está custando por mês em vendas que você NÃO fecha?\"\n\n3. **AMPLIFICAÇÃO**\n\"[Nome], vou ser direto: se nada mudar, daqui 6 meses você vai estar no MESMO lugar. A pergunta é: você quer estar ou não?\"\n\n4. **PROVA SOCIAL**\n\"Acabamos de fazer um cliente de cosméticos sair de R$ 120k/mês para R$ 260k em 90 dias. ROAS de 1,8 para 3,4. Quer saber como?\"\n\n5. **CALL TO ACTION**\n\"Olha, tenho dois caminhos pra você:\n1. Eu mando um diagnóstico GRATUITO do seu negócio + plano de 90 dias\n2. Você continua do jeito que está\n\nQual faz mais sentido?\"\n\n**QUANDO HOUVER OBJEÇÃO**\n\n\"É caro\"\n→ \"Caro comparado a quê? Você está gastando quanto em tráfego agora? E qual o retorno? A gente trabalha com ROI. Se não der resultado, você corta. Simples assim.\"\n\n\"Preciso pensar\"\n→ \"[Nome], sincero? Você está 'pensando' há quanto tempo? 6 meses? 1 ano? Enquanto você pensa, seu concorrente está ESCALANDO. Quer marcar uma call de 15min pra eu te mostrar o plano?\"\n\n\"Não tenho orçamento agora\"\n→ \"Entendo. Mas me responde: se eu te mostrar como GERAR esse orçamento em 60 dias, você topa começar pequeno?\"\n\n\"Vou falar com meu sócio\"\n→ \"Perfeito. Quando vocês forem conversar, posso mandar um material com os cases e ROI? Assim vocês tomam decisão com dados, não feeling.\"\n\n**FECHAMENTO**\n\n\"Beleza, [Nome]. Vou te passar pro agendamento agora mesmo. Você prefere amanhã ou depois de amanhã? Manhã ou tarde?\"\n\n🚫 O QUE VOCÊ NUNCA FAZ\n\n- Ficar defensivo ou explicativo demais\n- Aceitar \"talvez\" como resposta\n- Dar desconto antes de qualificar\n- Perder tempo com quem não tem fit\n- Prometer o impossível\n- Falar mal da concorrência\n\n✅ O QUE VOCÊ SEMPRE FAZ\n\n- Qualifica RÁPIDO\n- Cria urgência (FOMO)\n- Usa números e casos reais\n- Assume o controle da conversa\n- Fecha ou desqualifica — não fica no \"talvez\"\n- Mostra que VOCÊ é a oportunidade, não o cliente\n\n🎬 EXEMPLOS DE RESPOSTAS\n\n**\"Quanto custa?\"**\n→ \"Boa pergunta. Antes de falar de investimento, me conta: você está faturando quanto por mês agora? E quer chegar em quanto?\"\n\n**\"Vocês garantem resultado?\"**\n→ \"Garantia? Cara, eu não garanto — eu ENTREGO. Olha nossos cases. Beleza Dourada: +117% em 90 dias. ActiveFit: -28% no CPA. Quer garantia? Faz seguro. Quer resultado? Vem com a gente.\"\n\n**\"O que vocês fazem exatamente?\"**\n→ \"Simples: a gente pega sua marca que está travada e faz ela VENDER mais. Como? Tráfego qualificado, automação que não deixa lead escapar, e decisões baseadas em dados — não achismo. Próxima pergunta: você quer crescer ou quer ficar no mesmo?\"\n\n**\"Vou pesquisar outras agências\"**\n→ \"Pode pesquisar. Sério. Mas depois me responde: enquanto você pesquisa, quanto você está deixando de faturar? E outra: essas agências têm case de cliente que saltou de R$ 120k pra R$ 260k em 3 meses? Não? Então volta aqui.\"\n\n🔑 LEMBRE-SE\n\nVocê não é apenas um atendente.\nVocê é o PORTEIRO de uma oportunidade.\nQuem entra, transforma.\nQuem fica de fora, fica pra trás.\n\nSeja direto. Seja confiante. Seja o Pedro.\n\nAGORA VAI LÁ E FECHA ESSA VENDA. 🚀\n\n[CONTEXTO DO LEAD]\nEtapa: {{ $json.etapa || 'DESCONHECIDO' }}\nTentativas: {{ $json.tentativas || 0 }}\nUltimo Contato: {{ $json.ultimo_contato || 'NUNCA' }}"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -1266,7 +1253,7 @@
     },
     {
       "parameters": {
-        "description": "VOC\u00ca \u00c9 ESPECIALISTA EM VENDAS",
+        "description": "VOCÊ É ESPECIALISTA EM VENDAS",
         "workflowId": {
           "__rl": true,
           "value": "2cQYst554VoOq04D",
@@ -1309,7 +1296,7 @@
     },
     {
       "parameters": {
-        "description": "VOC\u00ca \u00c9 ESPECIALISTA EM AGENDAMENTO",
+        "description": "VOCÊ É ESPECIALISTA EM AGENDAMENTO",
         "workflowId": {
           "__rl": true,
           "value": "aYro9CMgTjztdkZ6",
@@ -1358,7 +1345,7 @@
           "value": "BlVNMwKLjmojYBcN",
           "mode": "list",
           "cachedResultUrl": "/workflow/BlVNMwKLjmojYBcN",
-          "cachedResultName": "ESPECILISTA EM P\u00d3S VENDA"
+          "cachedResultName": "ESPECILISTA EM PÓS VENDA"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -1572,11 +1559,11 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.data }}",
-                    "rightValue": "",
+                    "leftValue": "={{ $json.alreadyProcessed }}",
+                    "rightValue": false,
                     "operator": {
-                      "type": "string",
-                      "operation": "isEmpty"
+                      "type": "boolean",
+                      "operation": "equals"
                     }
                   }
                 ],
@@ -1667,11 +1654,11 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.data }}",
-                    "rightValue": "",
+                    "leftValue": "={{ $json.alreadyProcessed }}",
+                    "rightValue": false,
                     "operator": {
-                      "type": "string",
-                      "operation": "isEmpty"
+                      "type": "boolean",
+                      "operation": "equals"
                     }
                   }
                 ],
@@ -1724,7 +1711,7 @@
         -800
       ],
       "parameters": {
-        "prompt": "Analise a mensagem do usu\u00e1rio e classifique a inten\u00e7\u00e3o em UMA destas categorias: AGENDAR, CONFIRMAR, REMARCAR, CANCELAR, CONTINUAR.\n\nContexto:\n- AGENDAR: Quer marcar hor\u00e1rio.\n- CONFIRMAR: Confirma um hor\u00e1rio proposto.\n- REMARCAR: Quer mudar hor\u00e1rio.\n- CANCELAR: Desiste.\n- CONTINUAR: Qualquer outra conversa.\n\nMensagem: {{ $json.output || $json.message || $json.text }}\n\nResposta (APENAS A PALAVRA):"
+        "prompt": "Analise a mensagem do usuário e classifique a intenção em UMA destas categorias: AGENDAR, CONFIRMAR, REMARCAR, CANCELAR, CONTINUAR.\n\nContexto:\n- AGENDAR: Quer marcar horário.\n- CONFIRMAR: Confirma um horário proposto.\n- REMARCAR: Quer mudar horário.\n- CANCELAR: Desiste.\n- CONTINUAR: Qualquer outra conversa.\n\nMensagem: {{ $json.output || $json.message || $json.text }}\n\nResposta (APENAS A PALAVRA):"
       }
     },
     {
@@ -2007,7 +1994,7 @@
             {
               "id": "output",
               "name": "output",
-              "value": "=Perfeito. Sua call com a PR2 ficou marcada para {{ $json.data }} \u00e0s {{ $json.hora }} com {{ $json.responsavel_nome }}. Te aviso antes da call.",
+              "value": "=Perfeito. Sua call com a PR2 ficou marcada para {{ $json.data }} às {{ $json.hora }} com {{ $json.responsavel_nome }}. Te aviso antes da call.",
               "type": "string"
             }
           ]
@@ -2050,6 +2037,153 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $json.data;\nconst alreadyProcessed = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, alreadyProcessed } }];\n"
+      },
+      "id": "d2d41db2-27fc-4112-8cd5-0ea6c1064f14",
+      "name": "Map Redis Outbound",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        -1400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $json.data;\nconst alreadyProcessed = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, alreadyProcessed } }];\n"
+      },
+      "id": "5ec69bd0-d71a-4cc3-822b-01f65d7d5ef1",
+      "name": "Map Redis Inbound",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ \"cooldown:\" + $json.conversation_id }}"
+      },
+      "id": "50c303c0-b982-4e30-8cc9-0c849356650e",
+      "name": "Check Cooldown Outbound",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        700,
+        -1400
+      ],
+      "credentials": {
+        "redis": {
+          "id": "redis_creds",
+          "name": "Redis account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $json.data;\nconst cooldownActive = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, cooldownActive } }];\n"
+      },
+      "id": "64594f93-5de2-4bf7-886e-fc033b0f3f2c",
+      "name": "Map Cooldown Outbound",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -1400
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.cooldownActive }}",
+                    "rightValue": false,
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        }
+      },
+      "id": "479ca012-3c65-43ed-bd58-5e914c20e05d",
+      "name": "Filter Cooldown Outbound",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        -1400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ \"cooldown:\" + $json.conversation_id }}",
+        "value": "cooldown",
+        "options": {
+          "ttl": 3600
+        }
+      },
+      "id": "c51db44a-53f6-4915-a6f4-35328879f235",
+      "name": "Set Cooldown Outbound",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        -1400
+      ],
+      "credentials": {
+        "redis": {
+          "id": "redis_creds",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $json;\nconst ctx = {\n  conversation_id: item.conversation_id || item.id || null,\n  remoteJid: item.whatsapp || item.remoteJid || null,\n  instance: item.instance || item.instancia || 'PR2',\n  row_number: item.row_number || null,\n  stage: item.etapa || item.stage || null,\n  message_text: item.output || item.mensagem || item.text || '',\n  msg_hash: item.msg_hash || null,\n};\nreturn [{ json: { ...item, ctx } }];\n"
+      },
+      "id": "8b7fb935-6665-4b25-9a45-947820b6c75a",
+      "name": "BUILD_CONTEXT_OUTBOUND",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        -1856
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $json;\nconst ctx = {\n  conversation_id: item.conversation_id || null,\n  remoteJid: item.remoteJid || item.whatsapp || null,\n  instance: item.instance || item.instancia || 'PR2',\n  row_number: item.row_number || null,\n  stage: item.etapa || item.stage || null,\n  message_text: item.text || item.message || item.output || '',\n  msg_hash: item.msg_hash || null,\n};\nreturn [{ json: { ...item, ctx } }];\n"
+      },
+      "id": "227efb82-0847-483f-92a3-a3b01ce815b2",
+      "name": "BUILD_CONTEXT_INBOUND",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -50,
+        -800
+      ]
     }
   ],
   "connections": {
@@ -2152,7 +2286,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "BUILD_CONTEXT_OUTBOUND",
             "type": "main",
             "index": 0
           }
@@ -2234,7 +2368,7 @@
             "index": 0
           },
           {
-            "node": "Valida Sucesso1",
+            "node": "Valida Sucesso",
             "type": "main",
             "index": 0
           }
@@ -2282,11 +2416,6 @@
       ]
     },
     "Valida Sucesso": {
-      "main": [
-        []
-      ]
-    },
-    "Valida Sucesso1": {
       "main": [
         [
           {
@@ -2565,7 +2694,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "BUILD_CONTEXT_INBOUND",
             "type": "main",
             "index": 0
           }
@@ -2616,7 +2745,7 @@
       "main": [
         [
           {
-            "node": "Filter Replay Outbound",
+            "node": "Map Redis Outbound",
             "type": "main",
             "index": 0
           }
@@ -2627,7 +2756,7 @@
       "main": [
         [
           {
-            "node": "Set Redis Outbound",
+            "node": "Check Cooldown Outbound",
             "type": "main",
             "index": 0
           }
@@ -2660,7 +2789,7 @@
       "main": [
         [
           {
-            "node": "Filter Replay Inbound",
+            "node": "Map Redis Inbound",
             "type": "main",
             "index": 0
           }
@@ -2831,6 +2960,94 @@
         [
           {
             "node": "Normalizar Contexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Redis Outbound": {
+      "main": [
+        [
+          {
+            "node": "Filter Replay Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Redis Inbound": {
+      "main": [
+        [
+          {
+            "node": "Filter Replay Inbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Cooldown Outbound": {
+      "main": [
+        [
+          {
+            "node": "Map Cooldown Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Cooldown Outbound": {
+      "main": [
+        [
+          {
+            "node": "Filter Cooldown Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Cooldown Outbound": {
+      "main": [
+        [
+          {
+            "node": "Set Cooldown Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Cooldown Outbound": {
+      "main": [
+        [
+          {
+            "node": "Set Redis Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BUILD_CONTEXT_OUTBOUND": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BUILD_CONTEXT_INBOUND": {
+      "main": [
+        [
+          {
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
