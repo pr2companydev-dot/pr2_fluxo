@@ -13,12 +13,12 @@
         }
       },
       "id": "1632bbae-b723-4f09-a071-dd297923652f",
-      "name": "Schedule Trigger",
+      "name": "SH_Trigger_Schedule",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -1072,
-        -1856
+        0,
+        -1900
       ]
     },
     {
@@ -48,12 +48,12 @@
         "options": {}
       },
       "id": "b4f31725-59a6-491d-8260-31b5f0c5548a",
-      "name": "Google Sheets",
+      "name": "OUT_Sheets_GetLeads",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -768,
-        -1856
+        200,
+        -1900
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -67,12 +67,12 @@
         "amount": "={{ Math.floor(Math.random() * 1000) + 505 }}"
       },
       "id": "d3b9792a-dbcd-471a-a23d-3b139fffa081",
-      "name": "Wait",
+      "name": "OUT_Wait_RandomDelay",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1088,
-        -1424
+        4400,
+        -1700
       ],
       "webhookId": "wait-random"
     },
@@ -81,7 +81,7 @@
         "resource": "messages-api",
         "instanceName": "PR2",
         "remoteJid": "={{ '+55' + $json.whatsapp }}\n",
-        "messageText": "={{ $('QUEBRA MENSAGEM').item.json.mensagem }}",
+        "messageText": "={{ $('OUT_SplitMessage').item.json.mensagem }}",
         "options_message": {
           "linkPreview": true
         }
@@ -89,11 +89,11 @@
       "type": "n8n-nodes-evolution-api.evolutionApi",
       "typeVersion": 1,
       "position": [
-        -768,
-        -1568
+        3600,
+        -1580
       ],
       "id": "569ce6fa-a66f-4243-829a-c3f2d67926f1",
-      "name": "Enviar texto",
+      "name": "OUT_SendText",
       "alwaysOutputData": false,
       "credentials": {
         "evolutionApi": {
@@ -110,11 +110,11 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -512,
-        -1856
+        400,
+        -1900
       ],
       "id": "1fb313c5-7c68-4994-becf-767ae088fcec",
-      "name": "Limit"
+      "name": "OUT_Limit_Batch"
     },
     {
       "parameters": {
@@ -125,11 +125,11 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        448,
-        -1840
+        1200,
+        -1900
       ],
       "id": "736ae2ba-dcb9-48d9-94aa-f5cac5b98f68",
-      "name": "AI Agent"
+      "name": "OUT_AI_GenerateCopy"
     },
     {
       "parameters": {
@@ -138,11 +138,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        1056,
-        -2016
+        1200,
+        -2100
       ],
       "id": "0515e50b-1dc5-4421-9236-b6bb71318474",
-      "name": "Google Gemini Chat Model",
+      "name": "SH_LLM_Gemini_Primary",
       "credentials": {
         "googlePalmApi": {
           "id": "XOPpVZp0DQkqoQbm",
@@ -162,11 +162,11 @@
       "type": "n8n-nodes-evolution-api.evolutionApi",
       "typeVersion": 1,
       "position": [
-        -272,
-        -1584
+        3600,
+        -1820
       ],
       "id": "d6812f0c-201c-4084-b98b-eb7cfa4e2c67",
-      "name": "Enviar imagem",
+      "name": "OUT_SendImage",
       "credentials": {
         "evolutionApi": {
           "id": "OQHRrlEej3jpb62N",
@@ -271,11 +271,11 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        128,
-        -1296
+        4000,
+        -1900
       ],
       "id": "188e5a39-1ae5-4df2-b342-b6288ff88b05",
-      "name": "SEM WHATSAPP",
+      "name": "SH_Update_NoWhatsapp",
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "I7CRAXIQ6TM2Ylkr",
@@ -308,7 +308,7 @@
             {
               "id": "95438d16-d476-4080-9aef-7b43f9e1d6d7",
               "name": "row_number",
-              "value": "={{ $('Google Sheets').item.json.row_number }}",
+              "value": "={{ $('OUT_Sheets_GetLeads').item.json.row_number }}",
               "type": "number"
             },
             {
@@ -322,12 +322,12 @@
         "options": {}
       },
       "id": "12111f6e-b0f5-4d1c-a200-ae6fb89a8933",
-      "name": "FILTRO INICIAL",
+      "name": "OUT_FilterEligible",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -224,
-        -1856
+        600,
+        -1900
       ]
     },
     {
@@ -337,19 +337,19 @@
             {
               "id": "19542bfa-6fb8-44a7-b1b1-dc5d820ad687",
               "name": "row_number",
-              "value": "={{ $('FILTRO INICIAL').item.json.row_number }}",
+              "value": "={{ $('OUT_FilterEligible').item.json.row_number }}",
               "type": "number"
             },
             {
               "id": "df36fa6a-4f7c-4c69-83f0-8d9dfdf63381",
               "name": "whatsapp",
-              "value": "={{ $('FILTRO INICIAL').item.json.whatsapp }}",
+              "value": "={{ $('OUT_FilterEligible').item.json.whatsapp }}",
               "type": "string"
             },
             {
               "id": "e9678d5f-1d3c-4a23-9519-daae955af927",
               "name": "id",
-              "value": "={{ $('FILTRO INICIAL').item.json.id }}",
+              "value": "={{ $('OUT_FilterEligible').item.json.id }}",
               "type": "number"
             },
             {
@@ -365,11 +365,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        848,
-        -1840
+        1100,
+        -1750
       ],
       "id": "e8074bfd-8385-4f61-9c4e-9272ec65dc85",
-      "name": "GUARDA CONTEXTO"
+      "name": "OUT_PreserveContext"
     },
     {
       "parameters": {
@@ -469,11 +469,11 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        128,
-        -1584
+        4000,
+        -1700
       ],
       "id": "715188cf-2ecf-4efb-a22a-af50b510ac94",
-      "name": "TRABALHO FEITO",
+      "name": "SH_Update_WorkDone",
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "I7CRAXIQ6TM2Ylkr",
@@ -491,20 +491,20 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        128,
-        -1856
+        1000,
+        -1900
       ],
       "id": "797ad876-f9be-472d-8577-e26dc01e1cce",
-      "name": "Loop Over Items"
+      "name": "OUT_Loop_Batch"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
-      "name": "Replace Me",
+      "name": "OUT_NoOp_AfterSend",
       "typeVersion": 1,
       "position": [
-        448,
-        -1456
+        4200,
+        -1700
       ],
       "id": "4a0a3a4e-5031-4739-a753-e0239ffc687e"
     },
@@ -515,11 +515,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1056,
-        -1840
+        3200,
+        -1900
       ],
       "id": "7b5afb01-50d8-4c59-9996-000334ad531d",
-      "name": "QUEBRA MENSAGEM"
+      "name": "OUT_SplitMessage"
     },
     {
       "parameters": {
@@ -528,11 +528,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -768,
-        -1296
+        3800,
+        -1900
       ],
       "id": "b0d69579-548c-4623-a272-89dc4ac7328d",
-      "name": "VALIDA ERRO"
+      "name": "ERR_ValidateImageSend"
     },
     {
       "parameters": {
@@ -561,11 +561,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        -1072,
-        -1584
+        3400,
+        -1700
       ],
       "id": "9c2d7797-2a4f-4a89-b116-1f63ea165d57",
-      "name": "1 FOTO"
+      "name": "OUT_CheckSendImage"
     },
     {
       "parameters": {
@@ -574,11 +574,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -496,
-        -1584
+        3800,
+        -1700
       ],
       "id": "ecfb2db8-5ee3-4801-96a8-7e34538f419d",
-      "name": "Valida Sucesso"
+      "name": "OUT_ValidateSend"
     },
     {
       "parameters": {
@@ -589,11 +589,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -4496,
-        112
+        0,
+        0
       ],
       "id": "72cc257a-2340-4c6e-a5b1-efe29e3e9045",
-      "name": "Webhook",
+      "name": "SH_Trigger_Webhook",
       "webhookId": "74903c30-fe24-4a6e-b2e9-094f608389e3"
     },
     {
@@ -607,11 +607,11 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        -2672,
-        576
+        3200,
+        -350
       ],
       "id": "e8c62da1-d577-483a-8675-874b957aec6c",
-      "name": "AI Agent"
+      "name": "IN_AI_Responder"
     },
     {
       "parameters": {
@@ -621,11 +621,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        -2672,
-        800
+        3200,
+        -550
       ],
       "id": "bbf513b6-3bf1-473e-af0d-1a3a2aff3a45",
-      "name": "Google Gemini Chat Model",
+      "name": "IN_LLM_Gemini",
       "credentials": {
         "googlePalmApi": {
           "id": "XOPpVZp0DQkqoQbm",
@@ -636,8 +636,8 @@
     {
       "parameters": {
         "resource": "messages-api",
-        "instanceName": "={{ $('dados').item.json.instancia }}",
-        "remoteJid": "={{ $('dados').item.json.remoteJid }}",
+        "instanceName": "={{ $('IN_ParseWebhook').item.json.instancia }}",
+        "remoteJid": "={{ $('IN_ParseWebhook').item.json.remoteJid }}",
         "messageText": "={{ $json.output }}",
         "options_message": {
           "delay": 5000,
@@ -647,11 +647,11 @@
       "type": "n8n-nodes-evolution-api.evolutionApi",
       "typeVersion": 1,
       "position": [
-        -2128,
-        576
+        3400,
+        -350
       ],
       "id": "d8a1cb0c-b1bd-47a7-920c-d49cdc81971f",
-      "name": "Enviar texto",
+      "name": "IN_SendReply",
       "credentials": {
         "evolutionApi": {
           "id": "OQHRrlEej3jpb62N",
@@ -714,11 +714,11 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        -4112,
-        112
+        400,
+        0
       ],
       "id": "1bb3197f-61f9-43f2-a830-3fb078eb9101",
-      "name": "Switch"
+      "name": "IN_Switch_MessageType"
     },
     {
       "parameters": {
@@ -727,7 +727,7 @@
             {
               "id": "4fe3e0ce-73fc-40ff-96df-4c1ba0133dbd",
               "name": "message",
-              "value": "={{ $('dados').item.json.Conversetion }}",
+              "value": "={{ $('IN_ParseWebhook').item.json.Conversetion }}",
               "type": "string"
             }
           ]
@@ -737,11 +737,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -3696,
-        96
+        600,
+        0
       ],
       "id": "738346e3-6374-4fd0-975b-286d689b4a83",
-      "name": "Set Text Message"
+      "name": "IN_SetTextMessage"
     },
     {
       "parameters": {
@@ -796,11 +796,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -4304,
-        112
+        200,
+        0
       ],
       "id": "3d092e49-c761-4b6f-9a56-2c5920725178",
-      "name": "dados"
+      "name": "IN_ParseWebhook"
     },
     {
       "parameters": {
@@ -819,27 +819,27 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -3312,
-        96
+        800,
+        0
       ],
       "id": "647b7e71-745e-4bd5-9db2-f167758d498b",
-      "name": "message"
+      "name": "IN_SetMessageEnvelope"
     },
     {
       "parameters": {
         "resource": "chat-api",
         "operation": "get-media-base64",
-        "instanceName": "={{ $('dados').item.json.instancia }}",
-        "messageId": "={{ $('dados').item.json.id }}"
+        "instanceName": "={{ $('IN_ParseWebhook').item.json.instancia }}",
+        "messageId": "={{ $('IN_ParseWebhook').item.json.id }}"
       },
       "type": "n8n-nodes-evolution-api.evolutionApi",
       "typeVersion": 1,
       "position": [
-        -3936,
-        256
+        600,
+        200
       ],
       "id": "98e3af27-a4c8-4b67-85c3-85a07d9fb4d4",
-      "name": "Obter m dia em base64",
+      "name": "IN_GetAudioBase64",
       "credentials": {
         "evolutionApi": {
           "id": "OQHRrlEej3jpb62N",
@@ -858,11 +858,11 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        -3776,
-        256
+        800,
+        200
       ],
       "id": "41b52db3-26dc-4a99-9dcd-e0ae70215702",
-      "name": "Convert to File"
+      "name": "IN_ConvertAudioFile"
     },
     {
       "parameters": {
@@ -902,11 +902,11 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        -3632,
-        256
+        1000,
+        200
       ],
       "id": "743bc5b9-19f6-4877-a406-012f8a6eb621",
-      "name": "HTTP Request",
+      "name": "IN_TranscribeAudio",
       "credentials": {
         "groqApi": {
           "id": "3SncfhwrwveZsh3q",
@@ -931,11 +931,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -3488,
-        256
+        1200,
+        200
       ],
       "id": "a406ef34-2013-4358-ac3a-643771384487",
-      "name": "Set Audio Message"
+      "name": "IN_SetAudioMessage"
     },
     {
       "parameters": {
@@ -949,7 +949,7 @@
           "conditions": [
             {
               "id": "948db5a7-660c-4398-91a2-ef34fbd2c799",
-              "leftValue": "={{ $('dados').item.json.FromMe }}",
+              "leftValue": "={{ $('IN_ParseWebhook').item.json.FromMe }}",
               "rightValue": false,
               "operator": {
                 "type": "boolean",
@@ -966,27 +966,27 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        -3088,
-        96
+        1000,
+        -150
       ],
       "id": "84b7c825-b221-449e-a6b0-cb52bc001bb1",
-      "name": "If"
+      "name": "IN_CheckBlock"
     },
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "{{ $('Normalizar Contexto').item.json.conversation_id }}",
+        "sessionKey": "{{ $('IN_NormalizeContext').item.json.conversation_id }}",
         "sessionTTL": 3600,
         "contextWindowLength": 30
       },
       "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
       "typeVersion": 1.5,
       "position": [
-        -2304,
-        704
+        2200,
+        -150
       ],
       "id": "cae286ff-98ea-41e9-bddc-63feda206a65",
-      "name": "Redis Chat Memory",
+      "name": "IN_Memory_RedisChat",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -997,7 +997,7 @@
     {
       "parameters": {
         "operation": "set",
-        "key": "={{ $('dados').item.json.instancia }} {{ $('dados').item.json.remoteJid }} block",
+        "key": "={{ $('IN_ParseWebhook').item.json.instancia }} {{ $('IN_ParseWebhook').item.json.remoteJid }} block",
         "value": "true",
         "expire": true,
         "ttl": 700
@@ -1005,11 +1005,11 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -2784,
-        16
+        1200,
+        -150
       ],
       "id": "b89cb474-9f40-46c9-a0a6-6d5b2b385ff4",
-      "name": "Chave Block",
+      "name": "IN_SetBlockKey",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -1024,7 +1024,7 @@
           "messageValues": [
             {
               "type": "ai",
-              "message": "={{ $('message').item.json.message }}"
+              "message": "={{ $('IN_SetMessageEnvelope').item.json.message }}"
             }
           ]
         }
@@ -1032,27 +1032,27 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        -2304,
-        16
+        1600,
+        -50
       ],
       "id": "7628892e-0146-47b7-a7f7-3b74384b997e",
-      "name": "Chat Memory Manager"
+      "name": "IN_Memory_InsertAI"
     },
     {
       "parameters": {
         "operation": "get",
         "propertyName": "isBlocked",
-        "key": "={{ $('dados').item.json.instancia }} {{ $('dados').item.json.remoteJid }} block",
+        "key": "={{ $('IN_ParseWebhook').item.json.instancia }} {{ $('IN_ParseWebhook').item.json.remoteJid }} block",
         "options": {}
       },
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -2784,
-        240
+        1200,
+        80
       ],
       "id": "db25d61c-2b1a-4978-8333-4b9a93b5abcb",
-      "name": "Redis",
+      "name": "IN_Redis_CheckBlock",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -1089,11 +1089,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        -2576,
-        240
+        1400,
+        80
       ],
       "id": "eb703c12-6365-4be0-8d80-0b3378372eaa",
-      "name": "If1"
+      "name": "IN_CheckBlocked"
     },
     {
       "parameters": {
@@ -1102,7 +1102,7 @@
           "messageValues": [
             {
               "type": "user",
-              "message": "={{ $('message').item.json.message }}"
+              "message": "={{ $('IN_SetMessageEnvelope').item.json.message }}"
             }
           ]
         }
@@ -1110,27 +1110,27 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        -2304,
-        224
+        1600,
+        120
       ],
       "id": "19cd8430-44c1-4a0b-978c-fc9647d0aaa1",
-      "name": "Chat Memory Manager1"
+      "name": "IN_Memory_InsertUser"
     },
     {
       "parameters": {
         "operation": "push",
-        "list": "={{ $('dados').item.json.instancia }} {{ $('dados').item.json.remoteJid }} temp",
-        "messageData": "={{ $('message').item.json.message }}",
+        "list": "={{ $('IN_ParseWebhook').item.json.instancia }} {{ $('IN_ParseWebhook').item.json.remoteJid }} temp",
+        "messageData": "={{ $('IN_SetMessageEnvelope').item.json.message }}",
         "tail": true
       },
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -1968,
-        256
+        1800,
+        120
       ],
       "id": "903bd576-119b-4f81-be73-f69ba5841e5b",
-      "name": "Redis1",
+      "name": "IN_Redis_BufferPush",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -1145,28 +1145,28 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -1744,
-        256
+        2000,
+        120
       ],
       "id": "0baf2b15-2e0c-4f79-9bee-086c873178cb",
-      "name": "Wait",
+      "name": "IN_Wait_Buffer",
       "webhookId": "06809214-349d-41cb-a76f-835d6255afb3"
     },
     {
       "parameters": {
         "operation": "get",
         "propertyName": "messages",
-        "key": "={{ $('dados').item.json.instancia }} {{ $('dados').item.json.remoteJid }} temp",
+        "key": "={{ $('IN_ParseWebhook').item.json.instancia }} {{ $('IN_ParseWebhook').item.json.remoteJid }} temp",
         "options": {}
       },
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -3584,
-        576
+        2200,
+        120
       ],
       "id": "c5b98c96-63fa-4522-a729-d4d5347ce897",
-      "name": "Redis2",
+      "name": "IN_Redis_BufferGet",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -1187,7 +1187,7 @@
             {
               "id": "a188c362-8bad-4c2f-a1a1-a93efca9655f",
               "leftValue": "={{ $json.messages.last() }}",
-              "rightValue": "={{ $('message').item.json.message }}",
+              "rightValue": "={{ $('IN_SetMessageEnvelope').item.json.message }}",
               "operator": {
                 "type": "string",
                 "operation": "equals"
@@ -1202,25 +1202,25 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        -3376,
-        576
+        2400,
+        120
       ],
       "id": "fbebe309-ef26-484f-a9f5-748fe6435855",
-      "name": "If2"
+      "name": "IN_CheckDuplicateMessage"
     },
     {
       "parameters": {
         "operation": "delete",
-        "key": "={{ $('dados').item.json.instancia }} {{ $('dados').item.json.remoteJid }} temp"
+        "key": "={{ $('IN_ParseWebhook').item.json.instancia }} {{ $('IN_ParseWebhook').item.json.remoteJid }} temp"
       },
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -3136,
-        576
+        2600,
+        120
       ],
       "id": "d6933c87-1541-49f4-a459-b9bd4fd4c715",
-      "name": "Redis3",
+      "name": "IN_Redis_BufferClear",
       "credentials": {
         "redis": {
           "id": "yXEONQTloXyrbJep",
@@ -1235,7 +1235,7 @@
             {
               "id": "2b749467-b09a-4cb2-9019-c0e35075b619",
               "name": "message",
-              "value": "={{ $('Redis2').item.json.messages.join(\" \") }}",
+              "value": "={{ $('IN_Redis_BufferGet').item.json.messages.join(\" \") }}",
               "type": "string"
             }
           ]
@@ -1245,11 +1245,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -2928,
-        576
+        2800,
+        120
       ],
       "id": "82e2dd32-aa90-4074-b974-c3b638a2a7ae",
-      "name": "Mensagem Final"
+      "name": "IN_AggregateMessage"
     },
     {
       "parameters": {
@@ -1288,11 +1288,11 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2.2,
       "position": [
-        -2528,
-        1120
+        3400,
+        400
       ],
       "id": "7a70cbec-3146-4183-b11a-11379c0e545d",
-      "name": "VENDAS"
+      "name": "IN_Tool_Vendas"
     },
     {
       "parameters": {
@@ -1331,11 +1331,11 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2.2,
       "position": [
-        -2688,
-        1120
+        3600,
+        400
       ],
       "id": "6ef72cc5-87fd-4790-84e1-75c1f20fd6f3",
-      "name": "AGENDAMENTO"
+      "name": "IN_Tool_Agendamento"
     },
     {
       "parameters": {
@@ -1374,23 +1374,23 @@
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 2.2,
       "position": [
-        -2368,
-        1120
+        3200,
+        400
       ],
       "id": "2ffa8af2-9686-4935-b053-6acf274d5ecf",
-      "name": "POS VENDA"
+      "name": "IN_Tool_PosVenda"
     },
     {
       "parameters": {
         "jsCode": "\nconst items = $input.all();\nconst results = [];\nfor (const item of items) {\n    const json = item.json;\n    let phone = '';\n    let instance = 'PR2';\n    let origin = 'unknown';\n\n    if (json.body && json.body.key && json.body.key.remoteJid) {\n        phone = json.body.key.remoteJid;\n        instance = json.instance || 'PR2';\n        origin = 'inbound';\n    } else if (json.whatsapp) {\n        phone = json.whatsapp.toString();\n        origin = 'outbound';\n    } else if (json.remoteJid) {\n        phone = json.remoteJid;\n        origin = 'inbound_processed';\n    }\n\n    let cleanPhone = phone.replace(/\\D/g, '');\n    if (cleanPhone.length === 11 && !cleanPhone.startsWith('55')) cleanPhone = '55' + cleanPhone;\n    \n    const conversation_id = `${instance}_${cleanPhone}`;\n    results.push({ json: { ...json, conversation_id, flow_origin: origin } });\n}\nreturn results;\n"
       },
       "id": "node-norm",
-      "name": "Normalizar Contexto",
+      "name": "IN_NormalizeContext",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -200,
-        -800
+        1000,
+        -350
       ]
     },
     {
@@ -1418,12 +1418,12 @@
         }
       },
       "id": "node-state",
-      "name": "Carregar Estado",
+      "name": "IN_LoadLeadState",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        0,
-        -800
+        2400,
+        -350
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -1483,12 +1483,12 @@
         }
       },
       "id": "node-router",
-      "name": "Roteador",
+      "name": "IN_RouteByState",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        400,
-        -800
+        2600,
+        -350
       ]
     },
     {
@@ -1503,12 +1503,12 @@
         }
       },
       "id": "node-fallback",
-      "name": "Fallback Trigger",
+      "name": "SH_Trigger_Fallback",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -500,
-        -600
+        0,
+        900
       ]
     },
     {
@@ -1516,12 +1516,12 @@
         "jsCode": "\nconst crypto = require('crypto');\nconst items = $input.all();\nconst results = [];\nfor (const item of items) {\n    const text = item.json.output || item.json.text || '';\n    const hash = crypto.createHash('md5').update(text).digest('hex');\n    results.push({ json: { ...item.json, msg_hash: hash } });\n}\nreturn results;\n"
       },
       "id": "node-hash-Outbound",
-      "name": "Gerar Hash Outbound",
+      "name": "SH_GenerateHash_Outbound",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        200,
-        -1400
+        1400,
+        -1700
       ]
     },
     {
@@ -1530,12 +1530,12 @@
         "key": "={{ $json.conversation_id }}_{{ $json.msg_hash }}"
       },
       "id": "node-check-Outbound",
-      "name": "Check Redis Outbound",
+      "name": "SH_Redis_CheckReplay_Outbound",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        400,
-        -1400
+        1600,
+        -1700
       ],
       "credentials": {
         "redis": {
@@ -1574,12 +1574,12 @@
         }
       },
       "id": "node-switch-Outbound",
-      "name": "Filter Replay Outbound",
+      "name": "SH_Redis_FilterReplay_Outbound",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        600,
-        -1400
+        2000,
+        -1700
       ]
     },
     {
@@ -1592,12 +1592,12 @@
         }
       },
       "id": "node-set-Outbound",
-      "name": "Set Redis Outbound",
+      "name": "SH_Redis_SetReplay_Outbound",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        800,
-        -1400
+        3000,
+        -1700
       ],
       "credentials": {
         "redis": {
@@ -1611,12 +1611,12 @@
         "jsCode": "\nconst crypto = require('crypto');\nconst items = $input.all();\nconst results = [];\nfor (const item of items) {\n    const text = item.json.output || item.json.text || '';\n    const hash = crypto.createHash('md5').update(text).digest('hex');\n    results.push({ json: { ...item.json, msg_hash: hash } });\n}\nreturn results;\n"
       },
       "id": "node-hash-Inbound",
-      "name": "Gerar Hash Inbound",
+      "name": "SH_GenerateHash_Inbound",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        200,
-        600
+        1400,
+        -350
       ]
     },
     {
@@ -1625,12 +1625,12 @@
         "key": "={{ $json.conversation_id }}_{{ $json.msg_hash }}"
       },
       "id": "node-check-Inbound",
-      "name": "Check Redis Inbound",
+      "name": "SH_Redis_CheckReplay_Inbound",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        400,
-        600
+        1600,
+        -350
       ],
       "credentials": {
         "redis": {
@@ -1669,12 +1669,12 @@
         }
       },
       "id": "node-switch-Inbound",
-      "name": "Filter Replay Inbound",
+      "name": "SH_Redis_FilterReplay_Inbound",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        600,
-        600
+        2000,
+        -350
       ]
     },
     {
@@ -1687,12 +1687,12 @@
         }
       },
       "id": "node-set-Inbound",
-      "name": "Set Redis Inbound",
+      "name": "SH_Redis_SetReplay_Inbound",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        800,
-        600
+        2200,
+        -350
       ],
       "credentials": {
         "redis": {
@@ -1703,12 +1703,12 @@
     },
     {
       "id": "b5480ced-284d-4644-97c9-e06740372146",
-      "name": "Detectar Intencao Chain",
+      "name": "IN_DetectIntent",
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1,
       "position": [
-        600,
-        -800
+        2800,
+        -350
       ],
       "parameters": {
         "prompt": "Analise a mensagem do usuário e classifique a intenção em UMA destas categorias: AGENDAR, CONFIRMAR, REMARCAR, CANCELAR, CONTINUAR.\n\nContexto:\n- AGENDAR: Quer marcar horário.\n- CONFIRMAR: Confirma um horário proposto.\n- REMARCAR: Quer mudar horário.\n- CANCELAR: Desiste.\n- CONTINUAR: Qualquer outra conversa.\n\nMensagem: {{ $json.output || $json.message || $json.text }}\n\nResposta (APENAS A PALAVRA):"
@@ -1716,12 +1716,12 @@
     },
     {
       "id": "6e81476f-746e-43d0-85a3-8cb784249e85",
-      "name": "Switch Intencao",
+      "name": "IN_SwitchIntent",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        800,
-        -800
+        3000,
+        -350
       ],
       "parameters": {
         "rules": {
@@ -1822,12 +1822,12 @@
     },
     {
       "id": "dfaf6940-6733-44bf-9e65-059a3ad489f2",
-      "name": "Ler Equipe",
+      "name": "AG_ReadTeam",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1000,
-        -1000
+        2400,
+        1200
       ],
       "parameters": {
         "operation": "getMany",
@@ -1859,12 +1859,12 @@
     },
     {
       "id": "d0f66eb2-a49a-4c5c-93f5-424e45184549",
-      "name": "Selecionar Responsavel",
+      "name": "AG_SelectOwner",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1200,
-        -1000
+        2600,
+        1200
       ],
       "parameters": {
         "jsCode": "\nconst team = $input.all().map(i => i.json);\nif (!team.length) return [{json: {responsavel_nome: 'Admin', responsavel_email: 'admin@pr2.com', calendario_id: 'primary'}}];\n\n// Simple random for now (or round robin if we stored last index)\nconst selected = team[Math.floor(Math.random() * team.length)];\n\nreturn [{\n  json: {\n    ...selected,\n    responsavel_nome: selected.nome,\n    responsavel_email: selected.email,\n    calendario_id: selected.calendario_id\n  }\n}];\n"
@@ -1872,12 +1872,12 @@
     },
     {
       "id": "3e641526-6670-4e07-bf6f-a0d843280106",
-      "name": "Criar Evento Calendar",
+      "name": "AG_CreateCalendarEvent",
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1.2,
       "position": [
-        1200,
-        -800
+        2600,
+        1400
       ],
       "parameters": {
         "resource": "event",
@@ -1901,12 +1901,12 @@
     },
     {
       "id": "2c0f2688-6d9e-43be-8187-fca3305ea591",
-      "name": "Update Lead PENDENTE",
+      "name": "AG_UpdateSheet_Pending",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1400,
-        -1000
+        2800,
+        1200
       ],
       "parameters": {
         "operation": "update",
@@ -1940,12 +1940,12 @@
     },
     {
       "id": "9a739480-6639-4254-ba69-b13da2eaf8b9",
-      "name": "Update Lead CONFIRMADO",
+      "name": "AG_UpdateSheet_Confirmed",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1400,
-        -800
+        2800,
+        1400
       ],
       "parameters": {
         "operation": "update",
@@ -1981,12 +1981,12 @@
     },
     {
       "id": "789dc643-d5e7-4e92-8930-871295e08746",
-      "name": "Definir Msg Confirmacao",
+      "name": "AG_SetConfirmMessage",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1600,
-        -800
+        3000,
+        1400
       ],
       "parameters": {
         "assignments": {
@@ -2003,12 +2003,12 @@
     },
     {
       "id": "a7a9e13a-0d89-4ac7-a475-72e8c8923e80",
-      "name": "Ler Leads Fallback",
+      "name": "SH_Sheets_FallbackLeads",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -300,
-        -600
+        200,
+        900
       ],
       "parameters": {
         "operation": "getMany",
@@ -2043,12 +2043,12 @@
         "jsCode": "const data = $json.data;\nconst alreadyProcessed = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, alreadyProcessed } }];\n"
       },
       "id": "d2d41db2-27fc-4112-8cd5-0ea6c1064f14",
-      "name": "Map Redis Outbound",
+      "name": "SH_Redis_MapReplay_Outbound",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        500,
-        -1400
+        1800,
+        -1700
       ]
     },
     {
@@ -2056,12 +2056,12 @@
         "jsCode": "const data = $json.data;\nconst alreadyProcessed = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, alreadyProcessed } }];\n"
       },
       "id": "5ec69bd0-d71a-4cc3-822b-01f65d7d5ef1",
-      "name": "Map Redis Inbound",
+      "name": "SH_Redis_MapReplay_Inbound",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        500,
-        600
+        1800,
+        -350
       ]
     },
     {
@@ -2070,12 +2070,12 @@
         "key": "={{ \"cooldown:\" + $json.conversation_id }}"
       },
       "id": "50c303c0-b982-4e30-8cc9-0c849356650e",
-      "name": "Check Cooldown Outbound",
+      "name": "OUT_Redis_CheckCooldown",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        700,
-        -1400
+        2200,
+        -1700
       ],
       "credentials": {
         "redis": {
@@ -2090,12 +2090,12 @@
         "jsCode": "const data = $json.data;\nconst cooldownActive = data !== undefined && data !== null && data !== '';\nreturn [{ json: { ...$json, cooldownActive } }];\n"
       },
       "id": "64594f93-5de2-4bf7-886e-fc033b0f3f2c",
-      "name": "Map Cooldown Outbound",
+      "name": "OUT_Redis_MapCooldown",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        800,
-        -1400
+        2400,
+        -1700
       ]
     },
     {
@@ -2127,12 +2127,12 @@
         }
       },
       "id": "479ca012-3c65-43ed-bd58-5e914c20e05d",
-      "name": "Filter Cooldown Outbound",
+      "name": "OUT_Redis_FilterCooldown",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        900,
-        -1400
+        2600,
+        -1700
       ]
     },
     {
@@ -2145,12 +2145,12 @@
         }
       },
       "id": "c51db44a-53f6-4915-a6f4-35328879f235",
-      "name": "Set Cooldown Outbound",
+      "name": "OUT_Redis_SetCooldown",
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1000,
-        -1400
+        2800,
+        -1700
       ],
       "credentials": {
         "redis": {
@@ -2164,12 +2164,12 @@
         "jsCode": "const item = $json;\nconst ctx = {\n  conversation_id: item.conversation_id || item.id || null,\n  remoteJid: item.whatsapp || item.remoteJid || null,\n  instance: item.instance || item.instancia || 'PR2',\n  row_number: item.row_number || null,\n  stage: item.etapa || item.stage || null,\n  message_text: item.output || item.mensagem || item.text || '',\n  msg_hash: item.msg_hash || null,\n};\nreturn [{ json: { ...item, ctx } }];\n"
       },
       "id": "8b7fb935-6665-4b25-9a45-947820b6c75a",
-      "name": "BUILD_CONTEXT_OUTBOUND",
+      "name": "OUT_BuildContext",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -100,
-        -1856
+        800,
+        -1900
       ]
     },
     {
@@ -2177,209 +2177,420 @@
         "jsCode": "const item = $json;\nconst ctx = {\n  conversation_id: item.conversation_id || null,\n  remoteJid: item.remoteJid || item.whatsapp || null,\n  instance: item.instance || item.instancia || 'PR2',\n  row_number: item.row_number || null,\n  stage: item.etapa || item.stage || null,\n  message_text: item.text || item.message || item.output || '',\n  msg_hash: item.msg_hash || null,\n};\nreturn [{ json: { ...item, ctx } }];\n"
       },
       "id": "227efb82-0847-483f-92a3-a3b01ce815b2",
-      "name": "BUILD_CONTEXT_INBOUND",
+      "name": "IN_BuildContext",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -50,
-        -800
+        1200,
+        -350
+      ]
+    },
+    {
+      "parameters": {
+        "content": "00 — TRIGGERS\n\nResponsabilidade: iniciar execuções (schedule/webhook/fallback).\nEntrada: evento de trigger.\nSaída: item inicial do fluxo.\nDebug: trigger inativo, payload vazio.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "f3c6189d-471c-4d59-8238-6690ed495172",
+      "name": "00 — TRIGGERS",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -2200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "10 — OUTBOUND: Seleção de Leads\n\nResponsabilidade: selecionar leads aptos e preparar contexto.\nEntrada: planilha (TRABALHADO=NAO).\nSaída: id, row_number, whatsapp, ctx.*.\nDebug: filtros vazios, row sem telefone.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "b7560205-b569-47ac-8fb9-f6a6999378d6",
+      "name": "10 — OUTBOUND: Seleção de Leads",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        400,
+        -2200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "30 — OUTBOUND: Idempotência\n\nResponsabilidade: replay + cooldown.\nEntrada: conversation_id, msg_hash.\nSaída: permite envio ou bloqueia.\nDebug: Redis sem chave, cooldown sempre ativo.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "54817b77-67eb-4ca7-9126-c3e122ecc320",
+      "name": "30 — OUTBOUND: Idempotência",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        -2200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "20 — OUTBOUND: Mensagem & Envio\n\nResponsabilidade: IA → split → envio → validação.\nEntrada: ctx.message_text, whatsapp, instance.\nSaída: send_status, provider_message_id.\nDebug: retorno Evolution vazio ou erro imagem.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "9cdda797-c9c8-4626-a062-89cf23428dfe",
+      "name": "20 — OUTBOUND: Mensagem & Envio",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        -2200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "40 — INBOUND: Normalização\n\nResponsabilidade: padronizar entrada inbound.\nEntrada: webhook.\nSaída: instancia, remoteJid, message, conversation_id, ctx.*.\nDebug: payload incompleto, tipo msg inválido.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "638e7220-f209-4f4b-ab36-176eab85f067",
+      "name": "40 — INBOUND: Normalização",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "50 — INBOUND: Memória & Anti-loop\n\nResponsabilidade: dedup + buffer + memória.\nEntrada: conversation_id, message.\nSaída: mensagem agregada + contexto.\nDebug: duplicações, TTL curto, buffer não limpou.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "96aead35-bc8c-418c-a77c-7b658db4d070",
+      "name": "50 — INBOUND: Memória & Anti-loop",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "60 — INBOUND: Roteamento & Resposta\n\nResponsabilidade: carregar estado, decidir agente e responder.\nEntrada: estado + mensagem final.\nSaída: resposta enviada.\nDebug: roteador sem match, IA sem contexto.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "346dd636-6c26-4184-a092-19e1ad24587a",
+      "name": "60 — INBOUND: Roteamento & Resposta",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "70 — AGENDAMENTO\n\nResponsabilidade: selecionar responsável e criar evento.\nEntrada: intenção de agendar + lead.\nSaída: evento criado, etapa atualizada.\nDebug: equipe vazia, calendário sem permissão.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "f44abb42-c6a4-46d5-bbaf-337d193317be",
+      "name": "70 — AGENDAMENTO",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "content": "80 — ATUALIZAÇÕES SHEETS\n\nResponsabilidade: atualizar status/etapa do lead.\nEntrada: id/row_number + status.\nSaída: planilha atualizada.\nDebug: coluna errada, id não encontrado.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "a9c6795e-fb4c-4e8d-a554-caf411a0cdf4",
+      "name": "80 — ATUALIZAÇÕES SHEETS",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        -2100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "90 — ERROS & OBSERVABILIDADE\n\nResponsabilidade: capturar erro e registrar status.\nEntrada: retorno Evolution/validações.\nSaída: erro estruturado.\nDebug: output vazio, sem contexto.",
+        "height": 180,
+        "width": 420,
+        "color": 5
+      },
+      "id": "c097ad0a-cea8-4cfe-ad2a-b8a6b9b88562",
+      "name": "90 — ERROS & OBSERVABILIDADE",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        -1900
+      ]
+    },
+    {
+      "parameters": {
+        "content": "99 — CONFIG & CONSTANTES\n\nResponsabilidade: credenciais/IDs fixos.\nEntrada: configs (Sheets/Redis/Gemini/Evolution).\nSaída: recursos prontos.\nDebug: credencial inválida, ID desatualizado.",
+        "height": 240,
+        "width": 520,
+        "color": 3
+      },
+      "id": "0f4fd4ca-952c-419e-a2b1-564de347d1ab",
+      "name": "99 — CONFIG & CONSTANTES",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4200,
+        -2200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "✅ checkpoint — antes do envio outbound\n\nVerifique ctx.message_text + whatsapp + instance antes de enviar.",
+        "height": 140,
+        "width": 320,
+        "color": 2
+      },
+      "id": "db5aabcb-511a-4f12-b5b7-6d120bf154c9",
+      "name": "✅ checkpoint — antes do envio outbound",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3400,
+        -2000
+      ]
+    },
+    {
+      "parameters": {
+        "content": "✅ checkpoint — depois da validação outbound\n\nConfirmar send_status e provider_message_id antes de atualizar Sheets.",
+        "height": 140,
+        "width": 320,
+        "color": 2
+      },
+      "id": "71e24a2b-48fd-4d48-a7a3-a9d436e43054",
+      "name": "✅ checkpoint — depois da validação outbound",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4000,
+        -2000
+      ]
+    },
+    {
+      "parameters": {
+        "content": "✅ checkpoint — antes da resposta inbound\n\nMensagem agregada e estado carregado antes de responder.",
+        "height": 140,
+        "width": 320,
+        "color": 2
+      },
+      "id": "b73b3b0f-8ad4-434c-ac75-c5830ede525f",
+      "name": "✅ checkpoint — antes da resposta inbound",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "✅ checkpoint — antes do Calendar\n\nConfirmar responsável, data/hora e lead.",
+        "height": 140,
+        "width": 320,
+        "color": 2
+      },
+      "id": "98f50a82-91a7-4bd2-90a4-39a4e3b7ecea",
+      "name": "✅ checkpoint — antes do Calendar",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        1100
       ]
     }
   ],
   "connections": {
-    "Schedule Trigger": {
+    "SH_Trigger_Schedule": {
       "main": [
         [
           {
-            "node": "Google Sheets",
+            "node": "OUT_Sheets_GetLeads",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Google Sheets": {
+    "OUT_Sheets_GetLeads": {
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "OUT_Limit_Batch",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait": {
+    "IN_Wait_Buffer": {
       "main": [
         [
           {
-            "node": "Gerar Hash Outbound",
+            "node": "SH_GenerateHash_Outbound",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Limit": {
+    "OUT_Limit_Batch": {
       "main": [
         [
           {
-            "node": "Normalizar Contexto",
+            "node": "IN_NormalizeContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "AI Agent": {
+    "IN_SendReply": {
       "main": [
         [
           {
-            "node": "Gerar Hash Outbound",
+            "node": "OUT_ValidateSend",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Google Gemini Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Enviar texto": {
+    "OUT_SendImage": {
       "main": [
         [
           {
-            "node": "Valida Sucesso",
+            "node": "IN_SendReply",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Enviar imagem": {
+    "OUT_FilterEligible": {
       "main": [
         [
           {
-            "node": "Enviar texto",
+            "node": "OUT_BuildContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "FILTRO INICIAL": {
+    "OUT_PreserveContext": {
       "main": [
         [
           {
-            "node": "BUILD_CONTEXT_OUTBOUND",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GUARDA CONTEXTO": {
-      "main": [
-        [
-          {
-            "node": "QUEBRA MENSAGEM",
+            "node": "OUT_SplitMessage",
             "type": "main",
             "index": 0
           },
           {
-            "node": "VALIDA ERRO",
+            "node": "ERR_ValidateImageSend",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Valida Sucesso",
+            "node": "OUT_ValidateSend",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop Over Items": {
+    "OUT_Loop_Batch": {
       "main": [
         [],
         [
           {
-            "node": "1 FOTO",
+            "node": "OUT_CheckSendImage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Replace Me": {
+    "OUT_NoOp_AfterSend": {
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "IN_Wait_Buffer",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "TRABALHO FEITO": {
+    "SH_Update_WorkDone": {
       "main": [
         [
           {
-            "node": "Replace Me",
+            "node": "OUT_NoOp_AfterSend",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "SEM WHATSAPP": {
+    "SH_Update_NoWhatsapp": {
       "main": [
         [
           {
-            "node": "Replace Me",
+            "node": "OUT_NoOp_AfterSend",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "QUEBRA MENSAGEM": {
+    "OUT_SplitMessage": {
       "main": [
         [
           {
-            "node": "1 FOTO",
+            "node": "OUT_CheckSendImage",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Valida Sucesso",
+            "node": "OUT_ValidateSend",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "VALIDA ERRO": {
+    "ERR_ValidateImageSend": {
       "main": [
         [
           {
-            "node": "SEM WHATSAPP",
+            "node": "SH_Update_NoWhatsapp",
             "type": "main",
             "index": 0
           }
@@ -2390,439 +2601,335 @@
       "main": [
         [
           {
-            "node": "1 FOTO",
+            "node": "OUT_CheckSendImage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "1 FOTO": {
+    "OUT_CheckSendImage": {
       "main": [
         [
           {
-            "node": "Enviar imagem",
+            "node": "OUT_SendImage",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Enviar texto",
+            "node": "IN_SendReply",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Valida Sucesso": {
+    "OUT_ValidateSend": {
       "main": [
         [
           {
-            "node": "TRABALHO FEITO",
+            "node": "SH_Update_WorkDone",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Webhook": {
+    "SH_Trigger_Webhook": {
       "main": [
         [
           {
-            "node": "dados",
+            "node": "IN_ParseWebhook",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch": {
+    "IN_Switch_MessageType": {
       "main": [
         [
           {
-            "node": "Set Text Message",
+            "node": "IN_SetTextMessage",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Obter m dia em base64",
+            "node": "IN_GetAudioBase64",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "dados": {
+    "IN_ParseWebhook": {
       "main": [
         [
           {
-            "node": "Normalizar Contexto",
+            "node": "IN_NormalizeContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set Text Message": {
+    "IN_SetTextMessage": {
       "main": [
         [
           {
-            "node": "Normalizar Contexto",
+            "node": "IN_NormalizeContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "message": {
+    "IN_SetMessageEnvelope": {
       "main": [
         [
           {
-            "node": "If",
+            "node": "IN_CheckBlock",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Obter m dia em base64": {
+    "IN_GetAudioBase64": {
       "main": [
         [
           {
-            "node": "Convert to File",
+            "node": "IN_ConvertAudioFile",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Convert to File": {
+    "IN_ConvertAudioFile": {
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "IN_TranscribeAudio",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request": {
+    "IN_TranscribeAudio": {
       "main": [
         [
           {
-            "node": "Set Audio Message",
+            "node": "IN_SetAudioMessage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set Audio Message": {
+    "IN_SetAudioMessage": {
       "main": [
         [
           {
-            "node": "message",
+            "node": "IN_SetMessageEnvelope",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "If": {
+    "IN_CheckBlock": {
       "main": [
         [
           {
-            "node": "Chave Block",
+            "node": "IN_SetBlockKey",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Redis",
+            "node": "IN_Redis_CheckBlock",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Redis Chat Memory": {
+    "IN_Memory_RedisChat": {
       "ai_memory": [
         [
           {
-            "node": "AI Agent",
+            "node": "OUT_AI_GenerateCopy",
             "type": "ai_memory",
             "index": 0
           },
           {
-            "node": "Chat Memory Manager1",
+            "node": "IN_Memory_InsertUser",
             "type": "ai_memory",
             "index": 0
           },
           {
-            "node": "Chat Memory Manager",
+            "node": "IN_Memory_InsertAI",
             "type": "ai_memory",
             "index": 0
           }
         ]
       ]
     },
-    "Chave Block": {
+    "IN_SetBlockKey": {
       "main": [
         [
           {
-            "node": "Chat Memory Manager",
+            "node": "IN_Memory_InsertAI",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Redis": {
+    "IN_Redis_CheckBlock": {
       "main": [
         [
           {
-            "node": "If1",
+            "node": "IN_CheckBlocked",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "If1": {
+    "IN_CheckBlocked": {
       "main": [
         [
           {
-            "node": "Chat Memory Manager1",
+            "node": "IN_Memory_InsertUser",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Redis1",
+            "node": "IN_Redis_BufferPush",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Redis1": {
+    "IN_Redis_BufferPush": {
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "IN_Wait_Buffer",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Redis2": {
+    "IN_Redis_BufferGet": {
       "main": [
         [
           {
-            "node": "If2",
+            "node": "IN_CheckDuplicateMessage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "If2": {
+    "IN_CheckDuplicateMessage": {
       "main": [
         [
           {
-            "node": "Redis3",
+            "node": "IN_Redis_BufferClear",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Redis3": {
+    "IN_Redis_BufferClear": {
       "main": [
         [
           {
-            "node": "Mensagem Final",
+            "node": "IN_AggregateMessage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Mensagem Final": {
+    "IN_AggregateMessage": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "OUT_AI_GenerateCopy",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "VENDAS": {
+    "IN_Tool_Vendas": {
       "ai_tool": [
         []
       ]
     },
-    "AGENDAMENTO": {
+    "IN_Tool_Agendamento": {
       "ai_tool": [
         []
       ]
     },
-    "POS VENDA": {
+    "IN_Tool_PosVenda": {
       "ai_tool": [
         []
       ]
     },
-    "Fallback Trigger": {
-      "main": [
-        {
-          "node": "Normalizar Contexto",
-          "type": "main",
-          "index": 0
-        }
-      ]
-    },
-    "Normalizar Contexto": {
+    "SH_Trigger_Fallback": {
       "main": [
         [
           {
-            "node": "BUILD_CONTEXT_INBOUND",
+            "node": "IN_NormalizeContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Carregar Estado": {
+    "IN_NormalizeContext": {
       "main": [
         [
           {
-            "node": "Roteador",
+            "node": "IN_BuildContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Roteador": {
+    "IN_LoadLeadState": {
       "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "AI Agent",
+            "node": "IN_RouteByState",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Gerar Hash Outbound": {
+    "IN_RouteByState": {
       "main": [
         [
           {
-            "node": "Check Redis Outbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check Redis Outbound": {
-      "main": [
-        [
-          {
-            "node": "Map Redis Outbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Filter Replay Outbound": {
-      "main": [
-        [
-          {
-            "node": "Check Cooldown Outbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Redis Outbound": {
-      "main": [
-        [
-          {
-            "node": "QUEBRA MENSAGEM",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Gerar Hash Inbound": {
-      "main": [
-        [
-          {
-            "node": "Check Redis Inbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check Redis Inbound": {
-      "main": [
-        [
-          {
-            "node": "Map Redis Inbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Filter Replay Inbound": {
-      "main": [
-        [
-          {
-            "node": "Set Redis Inbound",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Redis Inbound": {
-      "main": [
-        [
-          {
-            "node": "Enviar texto",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "node-router": {
-      "main": [
-        [
-          {
-            "node": "Detectar Intencao Chain",
+            "node": "IN_DetectIntent",
             "type": "main",
             "index": 0
           }
@@ -2830,224 +2937,325 @@
         []
       ]
     },
-    "0515e50b-1dc5-4421-9236-b6bb71318474": {
+    "SH_GenerateHash_Outbound": {
+      "main": [
+        [
+          {
+            "node": "SH_Redis_CheckReplay_Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_CheckReplay_Outbound": {
+      "main": [
+        [
+          {
+            "node": "SH_Redis_MapReplay_Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_FilterReplay_Outbound": {
+      "main": [
+        [
+          {
+            "node": "OUT_Redis_CheckCooldown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_SetReplay_Outbound": {
+      "main": [
+        [
+          {
+            "node": "OUT_SplitMessage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_GenerateHash_Inbound": {
+      "main": [
+        [
+          {
+            "node": "SH_Redis_CheckReplay_Inbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_CheckReplay_Inbound": {
+      "main": [
+        [
+          {
+            "node": "SH_Redis_MapReplay_Inbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_FilterReplay_Inbound": {
+      "main": [
+        [
+          {
+            "node": "SH_Redis_SetReplay_Inbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_Redis_SetReplay_Inbound": {
+      "main": [
+        [
+          {
+            "node": "IN_SendReply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SH_LLM_Gemini_Primary": {
       "ai_languageModel": [
-        {
-          "node": "Detectar Intencao Chain",
-          "type": "ai_languageModel",
-          "index": 0
-        }
+        [
+          {
+            "node": "OUT_AI_GenerateCopy",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
       ]
     },
-    "Detectar Intencao Chain": {
+    "IN_DetectIntent": {
       "main": [
         [
           {
-            "node": "Switch Intencao",
+            "node": "IN_SwitchIntent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch Intencao": {
+    "IN_SwitchIntent": {
       "main": [
         [
           {
-            "node": "Ler Equipe",
+            "node": "AG_ReadTeam",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Criar Evento Calendar",
+            "node": "AG_CreateCalendarEvent",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "736ae2ba-dcb9-48d9-94aa-f5cac5b98f68",
+            "node": "OUT_AI_GenerateCopy",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "736ae2ba-dcb9-48d9-94aa-f5cac5b98f68",
+            "node": "OUT_AI_GenerateCopy",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "AI Agent",
+            "node": "OUT_AI_GenerateCopy",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Ler Equipe": {
+    "AG_ReadTeam": {
       "main": [
         [
           {
-            "node": "Selecionar Responsavel",
+            "node": "AG_SelectOwner",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Selecionar Responsavel": {
+    "AG_SelectOwner": {
       "main": [
         [
           {
-            "node": "Update Lead PENDENTE",
+            "node": "AG_UpdateSheet_Pending",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Update Lead PENDENTE": {
+    "AG_UpdateSheet_Pending": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "OUT_AI_GenerateCopy",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Criar Evento Calendar": {
+    "AG_CreateCalendarEvent": {
       "main": [
         [
           {
-            "node": "Update Lead CONFIRMADO",
+            "node": "AG_UpdateSheet_Confirmed",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Update Lead CONFIRMADO": {
+    "AG_UpdateSheet_Confirmed": {
       "main": [
         [
           {
-            "node": "Definir Msg Confirmacao",
+            "node": "AG_SetConfirmMessage",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Definir Msg Confirmacao": {
+    "AG_SetConfirmMessage": {
       "main": [
         [
           {
-            "node": "Gerar Hash Inbound",
+            "node": "SH_GenerateHash_Inbound",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Ler Leads Fallback": {
+    "SH_Sheets_FallbackLeads": {
       "main": [
         [
           {
-            "node": "Normalizar Contexto",
+            "node": "IN_NormalizeContext",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Map Redis Outbound": {
+    "SH_Redis_MapReplay_Outbound": {
       "main": [
         [
           {
-            "node": "Filter Replay Outbound",
+            "node": "SH_Redis_FilterReplay_Outbound",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Map Redis Inbound": {
+    "SH_Redis_MapReplay_Inbound": {
       "main": [
         [
           {
-            "node": "Filter Replay Inbound",
+            "node": "SH_Redis_FilterReplay_Inbound",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check Cooldown Outbound": {
+    "OUT_Redis_CheckCooldown": {
       "main": [
         [
           {
-            "node": "Map Cooldown Outbound",
+            "node": "OUT_Redis_MapCooldown",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Map Cooldown Outbound": {
+    "OUT_Redis_MapCooldown": {
       "main": [
         [
           {
-            "node": "Filter Cooldown Outbound",
+            "node": "OUT_Redis_FilterCooldown",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filter Cooldown Outbound": {
+    "OUT_Redis_FilterCooldown": {
       "main": [
         [
           {
-            "node": "Set Cooldown Outbound",
+            "node": "OUT_Redis_SetCooldown",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set Cooldown Outbound": {
+    "OUT_Redis_SetCooldown": {
       "main": [
         [
           {
-            "node": "Set Redis Outbound",
+            "node": "SH_Redis_SetReplay_Outbound",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "BUILD_CONTEXT_OUTBOUND": {
+    "OUT_BuildContext": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "OUT_Loop_Batch",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "BUILD_CONTEXT_INBOUND": {
+    "IN_BuildContext": {
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "IN_Switch_MessageType",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OUT_AI_GenerateCopy": {
+      "main": [
+        [
+          {
+            "node": "SH_GenerateHash_Outbound",
             "type": "main",
             "index": 0
           }
